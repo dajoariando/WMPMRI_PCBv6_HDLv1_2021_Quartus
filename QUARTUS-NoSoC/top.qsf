@@ -568,7 +568,7 @@ set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (VHDL)"
 set_global_assignment -name EDA_TIME_SCALE "1 ps" -section_id eda_simulation
 set_global_assignment -name EDA_OUTPUT_DATA_FORMAT VHDL -section_id eda_simulation
 set_global_assignment -name EDA_TEST_BENCH_ENABLE_STATUS TEST_BENCH_MODE -section_id eda_simulation
-set_global_assignment -name EDA_NATIVELINK_SIMULATION_TEST_BENCH tb -section_id eda_simulation
+set_global_assignment -name EDA_NATIVELINK_SIMULATION_TEST_BENCH MGNT_Controller_tb -section_id eda_simulation
 set_global_assignment -name EDA_TEST_BENCH_NAME NMR_PULSE_PROGRAM_tb -section_id eda_simulation
 set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id NMR_PULSE_PROGRAM_tb
 set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME NMR_PULSE_PROGRAM_tb -section_id NMR_PULSE_PROGRAM_tb
@@ -582,6 +582,14 @@ set_global_assignment -name EDA_TEST_BENCH_NAME GNRL_IQcomb_decimator_tb -sectio
 set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id GNRL_IQcomb_decimator_tb
 set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME GNRL_IQcomb_decimator_tb -section_id GNRL_IQcomb_decimator_tb
 set_global_assignment -name EDA_TEST_BENCH_RUN_SIM_FOR "1 us" -section_id GNRL_IQcomb_decimator_tb
+set_global_assignment -name EDA_TEST_BENCH_NAME FIR_test_tb -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME DUT -section_id FIR_test_tb
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME work.FIR_test_tb -section_id FIR_test_tb
+set_global_assignment -name EDA_TEST_BENCH_NAME tb -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME DUT -section_id tb
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME work.FIR_test_tb -section_id tb
+set_global_assignment -name VERILOG_TEST_BENCH_FILE HDL/MGNT_Controller_tb.v
+set_global_assignment -name VERILOG_FILE HDL/MGNT_Controller.v
 set_global_assignment -name VERILOG_FILE HDL/NMR_RXDUP_EN_WINGEN.v
 set_global_assignment -name VERILOG_FILE HDL/GNRL_delayed_pulser.v
 set_global_assignment -name VERILOG_TEST_BENCH_FILE HDL/NMR_PULSE_PROGRAM_tb.v
@@ -604,20 +612,29 @@ set_global_assignment -name QIP_FILE HDL/Dummies/FIR_test.qip
 set_global_assignment -name SIP_FILE HDL/Dummies/FIR_test.sip
 set_global_assignment -name EDA_TEST_BENCH_FILE HDL/NMR_PULSE_PROGRAM_tb.v -section_id NMR_PULSE_PROGRAM_tb
 set_global_assignment -name EDA_TEST_BENCH_FILE HDL/NMR_Controller_tb.v -section_id NMR_Controller_tb
+set_global_assignment -name EDA_TEST_BENCH_FILE HDL/ADC_ACQ_WINGEN.v -section_id NMR_Controller_tb
+set_global_assignment -name EDA_TEST_BENCH_FILE HDL/ADC_LTC1746_DRV.v -section_id NMR_Controller_tb
+set_global_assignment -name EDA_TEST_BENCH_FILE HDL/CDC_Input_Synchronizer.v -section_id NMR_Controller_tb
+set_global_assignment -name EDA_TEST_BENCH_FILE HDL/GNRL_dconv_nofilter.v -section_id NMR_Controller_tb
+set_global_assignment -name EDA_TEST_BENCH_FILE HDL/GNRL_delayed_pulser.v -section_id NMR_Controller_tb
+set_global_assignment -name EDA_TEST_BENCH_FILE HDL/GNRL_IQcomb_decimator.v -section_id NMR_Controller_tb
+set_global_assignment -name EDA_TEST_BENCH_FILE HDL/NMR_Controller.v -section_id NMR_Controller_tb
+set_global_assignment -name EDA_TEST_BENCH_FILE HDL/NMR_PULSE_PROGRAM.v -section_id NMR_Controller_tb
+set_global_assignment -name EDA_TEST_BENCH_FILE HDL/NMR_QSW_EN_WINGEN.v -section_id NMR_Controller_tb
+set_global_assignment -name EDA_TEST_BENCH_FILE HDL/NMR_RXDUP_EN_WINGEN.v -section_id NMR_Controller_tb
+set_global_assignment -name EDA_TEST_BENCH_FILE HDL/NMR_TX_SD_WINGEN.v -section_id NMR_Controller_tb
 set_global_assignment -name EDA_TEST_BENCH_FILE HDL/GNRL_dconv_nofilter_tb.v -section_id GNRL_dconv_nofilter_tb
 set_global_assignment -name EDA_TEST_BENCH_FILE HDL/GNRL_dconv_nofilter.v -section_id GNRL_dconv_nofilter_tb
 set_global_assignment -name EDA_TEST_BENCH_FILE HDL/GNRL_IQcomb_decimator_tb.v -section_id GNRL_IQcomb_decimator_tb
 set_global_assignment -name EDA_TEST_BENCH_FILE HDL/GNRL_IQcomb_decimator.v -section_id GNRL_IQcomb_decimator_tb
 set_global_assignment -name EDA_TEST_BENCH_FILE HDL/CDC_Input_Synchronizer.v -section_id GNRL_IQcomb_decimator_tb
-set_global_assignment -name EDA_TEST_BENCH_NAME FIR_test_tb -section_id eda_simulation
-set_global_assignment -name EDA_DESIGN_INSTANCE_NAME DUT -section_id FIR_test_tb
-set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME work.FIR_test_tb -section_id FIR_test_tb
 set_global_assignment -name EDA_TEST_BENCH_FILE HDL/Dummies/FIR_test_sim/FIR_test_input.txt -section_id FIR_test_tb
 set_global_assignment -name EDA_TEST_BENCH_FILE HDL/Dummies/FIR_test_sim/FIR_test_tb.vhd -section_id FIR_test_tb
-set_global_assignment -name EDA_TEST_BENCH_NAME tb -section_id eda_simulation
-set_global_assignment -name EDA_DESIGN_INSTANCE_NAME DUT -section_id tb
-set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME work.FIR_test_tb -section_id tb
-set_global_assignment -name EDA_TEST_BENCH_GATE_LEVEL_NETLIST_LIBRARY work -section_id tb
 set_global_assignment -name EDA_TEST_BENCH_FILE "D:/SHARED_DRIVE/NMR_PCBv6_HDLv1_2020_Quartus/QUARTUS-NoSoC/HDL/Dummies/FIR_test_sim/FIR_test_input.txt" -section_id tb -library work
 set_global_assignment -name EDA_TEST_BENCH_FILE "D:/SHARED_DRIVE/NMR_PCBv6_HDLv1_2020_Quartus/QUARTUS-NoSoC/HDL/Dummies/FIR_test_sim/FIR_test_tb.vhd" -section_id tb -library work
+set_global_assignment -name EDA_TEST_BENCH_NAME MGNT_Controller_tb -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id MGNT_Controller_tb
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME MGNT_Controller_tb -section_id MGNT_Controller_tb
+set_global_assignment -name EDA_TEST_BENCH_FILE HDL/MGNT_Controller.v -section_id MGNT_Controller_tb
+set_global_assignment -name EDA_TEST_BENCH_FILE HDL/MGNT_Controller_tb.v -section_id MGNT_Controller_tb
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

@@ -693,7 +693,7 @@
    {
       datum baseAddress
       {
-         value = "64";
+         value = "1264";
          type = "String";
       }
    }
@@ -720,6 +720,54 @@
       datum baseAddress
       {
          value = "1008";
+         type = "String";
+      }
+   }
+   element nmr_parameters.mgnt_chg_dlen_s1
+   {
+      datum baseAddress
+      {
+         value = "1104";
+         type = "String";
+      }
+   }
+   element nmr_parameters.mgnt_chg_plen_s1
+   {
+      datum baseAddress
+      {
+         value = "1248";
+         type = "String";
+      }
+   }
+   element nmr_parameters.mgnt_d_s1
+   {
+      datum baseAddress
+      {
+         value = "64";
+         type = "String";
+      }
+   }
+   element nmr_parameters.mgnt_dchg_dlen_s1
+   {
+      datum baseAddress
+      {
+         value = "96";
+         type = "String";
+      }
+   }
+   element nmr_parameters.mgnt_dchg_plen_s1
+   {
+      datum baseAddress
+      {
+         value = "112";
+         type = "String";
+      }
+   }
+   element nmr_parameters.mgnt_n_s1
+   {
+      datum baseAddress
+      {
+         value = "80";
          type = "String";
       }
    }
@@ -1087,6 +1135,42 @@
    type="conduit"
    dir="end" />
  <interface name="memory" internal="hps_0.memory" type="conduit" dir="end" />
+ <interface
+   name="mgnt_chg_dlen"
+   internal="nmr_parameters.mgnt_chg_dlen_external_connection"
+   type="conduit"
+   dir="end" />
+ <interface
+   name="mgnt_chg_plen"
+   internal="nmr_parameters.mgnt_chg_plen_external_connection"
+   type="conduit"
+   dir="end" />
+ <interface
+   name="mgnt_d"
+   internal="nmr_parameters.mgnt_d_external_connection"
+   type="conduit"
+   dir="end" />
+ <interface
+   name="mgnt_dchg_d"
+   internal="nmr_parameters.mgnt_dchg_d_external_connection" />
+ <interface
+   name="mgnt_dchg_dlen"
+   internal="nmr_parameters.mgnt_dchg_dlen_external_connection"
+   type="conduit"
+   dir="end" />
+ <interface
+   name="mgnt_dchg_n"
+   internal="nmr_parameters.mgnt_dchg_n_external_connection" />
+ <interface
+   name="mgnt_dchg_plen"
+   internal="nmr_parameters.mgnt_dchg_plen_external_connection"
+   type="conduit"
+   dir="end" />
+ <interface
+   name="mgnt_n"
+   internal="nmr_parameters.mgnt_n_external_connection"
+   type="conduit"
+   dir="end" />
  <interface
    name="nmr_pll_rst_dly"
    internal="nmr_parameters.nmr_pll_rst_dly_external_connection" />
@@ -2660,6 +2744,30 @@
   <parameter name="AUTO_INIT_DELAY_CLK_CLOCK_DOMAIN" value="6" />
   <parameter name="AUTO_INIT_DELAY_CLK_CLOCK_RATE" value="50000000" />
   <parameter name="AUTO_INIT_DELAY_CLK_RESET_DOMAIN" value="6" />
+  <parameter name="AUTO_MGNT_CHG_DLEN_CLK_CLOCK_DOMAIN" value="6" />
+  <parameter name="AUTO_MGNT_CHG_DLEN_CLK_CLOCK_RATE" value="50000000" />
+  <parameter name="AUTO_MGNT_CHG_DLEN_CLK_RESET_DOMAIN" value="6" />
+  <parameter name="AUTO_MGNT_CHG_PLEN_CLK_CLOCK_DOMAIN" value="6" />
+  <parameter name="AUTO_MGNT_CHG_PLEN_CLK_CLOCK_RATE" value="50000000" />
+  <parameter name="AUTO_MGNT_CHG_PLEN_CLK_RESET_DOMAIN" value="6" />
+  <parameter name="AUTO_MGNT_DCHG_DLEN_CLK_CLOCK_DOMAIN" value="6" />
+  <parameter name="AUTO_MGNT_DCHG_DLEN_CLK_CLOCK_RATE" value="50000000" />
+  <parameter name="AUTO_MGNT_DCHG_DLEN_CLK_RESET_DOMAIN" value="6" />
+  <parameter name="AUTO_MGNT_DCHG_D_CLK_CLOCK_DOMAIN" value="-1" />
+  <parameter name="AUTO_MGNT_DCHG_D_CLK_CLOCK_RATE" value="-1" />
+  <parameter name="AUTO_MGNT_DCHG_D_CLK_RESET_DOMAIN" value="-1" />
+  <parameter name="AUTO_MGNT_DCHG_N_CLK_CLOCK_DOMAIN" value="-1" />
+  <parameter name="AUTO_MGNT_DCHG_N_CLK_CLOCK_RATE" value="-1" />
+  <parameter name="AUTO_MGNT_DCHG_N_CLK_RESET_DOMAIN" value="-1" />
+  <parameter name="AUTO_MGNT_DCHG_PLEN_CLK_CLOCK_DOMAIN" value="6" />
+  <parameter name="AUTO_MGNT_DCHG_PLEN_CLK_CLOCK_RATE" value="50000000" />
+  <parameter name="AUTO_MGNT_DCHG_PLEN_CLK_RESET_DOMAIN" value="6" />
+  <parameter name="AUTO_MGNT_D_CLK_CLOCK_DOMAIN" value="6" />
+  <parameter name="AUTO_MGNT_D_CLK_CLOCK_RATE" value="50000000" />
+  <parameter name="AUTO_MGNT_D_CLK_RESET_DOMAIN" value="6" />
+  <parameter name="AUTO_MGNT_N_CLK_CLOCK_DOMAIN" value="6" />
+  <parameter name="AUTO_MGNT_N_CLK_CLOCK_RATE" value="50000000" />
+  <parameter name="AUTO_MGNT_N_CLK_RESET_DOMAIN" value="6" />
   <parameter name="AUTO_PULSE_180DEG_CLK_CLOCK_DOMAIN" value="6" />
   <parameter name="AUTO_PULSE_180DEG_CLK_CLOCK_RATE" value="50000000" />
   <parameter name="AUTO_PULSE_180DEG_CLK_RESET_DOMAIN" value="6" />
@@ -3211,7 +3319,7 @@
    start="hps_0.h2f_lw_axi_master"
    end="nmr_parameters.echo_skip_s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0040" />
+  <parameter name="baseAddress" value="0x04f0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -3266,6 +3374,60 @@
    end="analyzer_pll_reconfig.mgmt_avalon_slave">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x0100" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="17.1"
+   start="hps_0.h2f_lw_axi_master"
+   end="nmr_parameters.mgnt_chg_dlen_s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0450" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="17.1"
+   start="hps_0.h2f_lw_axi_master"
+   end="nmr_parameters.mgnt_chg_plen_s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x04e0" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="17.1"
+   start="hps_0.h2f_lw_axi_master"
+   end="nmr_parameters.mgnt_d_s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0040" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="17.1"
+   start="hps_0.h2f_lw_axi_master"
+   end="nmr_parameters.mgnt_dchg_dlen_s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0060" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="17.1"
+   start="hps_0.h2f_lw_axi_master"
+   end="nmr_parameters.mgnt_dchg_plen_s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0070" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="17.1"
+   start="hps_0.h2f_lw_axi_master"
+   end="nmr_parameters.mgnt_n_s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0050" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -3508,7 +3670,7 @@
    start="master_non_sec.master"
    end="nmr_parameters.echo_skip_s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0040" />
+  <parameter name="baseAddress" value="0x04f0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -3572,6 +3734,60 @@
    end="analyzer_pll_reconfig.mgmt_avalon_slave">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x0100" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="17.1"
+   start="master_non_sec.master"
+   end="nmr_parameters.mgnt_chg_dlen_s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0450" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="17.1"
+   start="master_non_sec.master"
+   end="nmr_parameters.mgnt_chg_plen_s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x04e0" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="17.1"
+   start="master_non_sec.master"
+   end="nmr_parameters.mgnt_d_s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0040" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="17.1"
+   start="master_non_sec.master"
+   end="nmr_parameters.mgnt_dchg_dlen_s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0060" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="17.1"
+   start="master_non_sec.master"
+   end="nmr_parameters.mgnt_dchg_plen_s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0070" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="17.1"
+   start="master_non_sec.master"
+   end="nmr_parameters.mgnt_n_s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0050" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -3918,6 +4134,36 @@
    kind="clock"
    version="17.1"
    start="clk_0.clk"
+   end="nmr_parameters.mgnt_chg_dlen_clk" />
+ <connection
+   kind="clock"
+   version="17.1"
+   start="clk_0.clk"
+   end="nmr_parameters.mgnt_chg_plen_clk" />
+ <connection
+   kind="clock"
+   version="17.1"
+   start="clk_0.clk"
+   end="nmr_parameters.mgnt_d_clk" />
+ <connection
+   kind="clock"
+   version="17.1"
+   start="clk_0.clk"
+   end="nmr_parameters.mgnt_dchg_dlen_clk" />
+ <connection
+   kind="clock"
+   version="17.1"
+   start="clk_0.clk"
+   end="nmr_parameters.mgnt_dchg_plen_clk" />
+ <connection
+   kind="clock"
+   version="17.1"
+   start="clk_0.clk"
+   end="nmr_parameters.mgnt_n_clk" />
+ <connection
+   kind="clock"
+   version="17.1"
+   start="clk_0.clk"
    end="adc_fifo_dc.out_clk" />
  <connection
    kind="clock"
@@ -4204,6 +4450,36 @@
    version="17.1"
    start="clk_0.clk_reset"
    end="analyzer_pll_reconfig.mgmt_reset" />
+ <connection
+   kind="reset"
+   version="17.1"
+   start="clk_0.clk_reset"
+   end="nmr_parameters.mgnt_chg_dlen_reset" />
+ <connection
+   kind="reset"
+   version="17.1"
+   start="clk_0.clk_reset"
+   end="nmr_parameters.mgnt_chg_plen_reset" />
+ <connection
+   kind="reset"
+   version="17.1"
+   start="clk_0.clk_reset"
+   end="nmr_parameters.mgnt_d_reset" />
+ <connection
+   kind="reset"
+   version="17.1"
+   start="clk_0.clk_reset"
+   end="nmr_parameters.mgnt_dchg_dlen_reset" />
+ <connection
+   kind="reset"
+   version="17.1"
+   start="clk_0.clk_reset"
+   end="nmr_parameters.mgnt_dchg_plen_reset" />
+ <connection
+   kind="reset"
+   version="17.1"
+   start="clk_0.clk_reset"
+   end="nmr_parameters.mgnt_n_reset" />
  <connection
    kind="reset"
    version="17.1"

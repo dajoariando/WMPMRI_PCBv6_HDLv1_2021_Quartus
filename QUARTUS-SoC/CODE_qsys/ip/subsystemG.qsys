@@ -73,6 +73,54 @@
          type = "int";
       }
    }
+   element mgnt_chg_dlen
+   {
+      datum _sortIndex
+      {
+         value = "14";
+         type = "int";
+      }
+   }
+   element mgnt_chg_plen
+   {
+      datum _sortIndex
+      {
+         value = "13";
+         type = "int";
+      }
+   }
+   element mgnt_d
+   {
+      datum _sortIndex
+      {
+         value = "18";
+         type = "int";
+      }
+   }
+   element mgnt_dchg_dlen
+   {
+      datum _sortIndex
+      {
+         value = "16";
+         type = "int";
+      }
+   }
+   element mgnt_dchg_plen
+   {
+      datum _sortIndex
+      {
+         value = "15";
+         type = "int";
+      }
+   }
+   element mgnt_n
+   {
+      datum _sortIndex
+      {
+         value = "17";
+         type = "int";
+      }
+   }
    element pulse_180deg
    {
       datum _sortIndex
@@ -258,6 +306,102 @@
    type="reset"
    dir="end" />
  <interface name="init_delay_s1" internal="init_delay.s1" type="avalon" dir="end" />
+ <interface
+   name="mgnt_chg_dlen_clk"
+   internal="mgnt_chg_dlen.clk"
+   type="clock"
+   dir="end" />
+ <interface
+   name="mgnt_chg_dlen_external_connection"
+   internal="mgnt_chg_dlen.external_connection"
+   type="conduit"
+   dir="end" />
+ <interface
+   name="mgnt_chg_dlen_reset"
+   internal="mgnt_chg_dlen.reset"
+   type="reset"
+   dir="end" />
+ <interface
+   name="mgnt_chg_dlen_s1"
+   internal="mgnt_chg_dlen.s1"
+   type="avalon"
+   dir="end" />
+ <interface
+   name="mgnt_chg_plen_clk"
+   internal="mgnt_chg_plen.clk"
+   type="clock"
+   dir="end" />
+ <interface
+   name="mgnt_chg_plen_external_connection"
+   internal="mgnt_chg_plen.external_connection"
+   type="conduit"
+   dir="end" />
+ <interface
+   name="mgnt_chg_plen_reset"
+   internal="mgnt_chg_plen.reset"
+   type="reset"
+   dir="end" />
+ <interface
+   name="mgnt_chg_plen_s1"
+   internal="mgnt_chg_plen.s1"
+   type="avalon"
+   dir="end" />
+ <interface name="mgnt_d_clk" internal="mgnt_d.clk" type="clock" dir="end" />
+ <interface
+   name="mgnt_d_external_connection"
+   internal="mgnt_d.external_connection"
+   type="conduit"
+   dir="end" />
+ <interface name="mgnt_d_reset" internal="mgnt_d.reset" type="reset" dir="end" />
+ <interface name="mgnt_d_s1" internal="mgnt_d.s1" type="avalon" dir="end" />
+ <interface
+   name="mgnt_dchg_dlen_clk"
+   internal="mgnt_dchg_dlen.clk"
+   type="clock"
+   dir="end" />
+ <interface
+   name="mgnt_dchg_dlen_external_connection"
+   internal="mgnt_dchg_dlen.external_connection"
+   type="conduit"
+   dir="end" />
+ <interface
+   name="mgnt_dchg_dlen_reset"
+   internal="mgnt_dchg_dlen.reset"
+   type="reset"
+   dir="end" />
+ <interface
+   name="mgnt_dchg_dlen_s1"
+   internal="mgnt_dchg_dlen.s1"
+   type="avalon"
+   dir="end" />
+ <interface
+   name="mgnt_dchg_plen_clk"
+   internal="mgnt_dchg_plen.clk"
+   type="clock"
+   dir="end" />
+ <interface
+   name="mgnt_dchg_plen_external_connection"
+   internal="mgnt_dchg_plen.external_connection"
+   type="conduit"
+   dir="end" />
+ <interface
+   name="mgnt_dchg_plen_reset"
+   internal="mgnt_dchg_plen.reset"
+   type="reset"
+   dir="end" />
+ <interface
+   name="mgnt_dchg_plen_s1"
+   internal="mgnt_dchg_plen.s1"
+   type="avalon"
+   dir="end" />
+ <interface name="mgnt_n_clk" internal="mgnt_n.clk" type="clock" dir="end" />
+ <interface
+   name="mgnt_n_external_connection"
+   internal="mgnt_n.external_connection"
+   type="conduit"
+   dir="end" />
+ <interface name="mgnt_n_reset" internal="mgnt_n.reset" type="reset" dir="end" />
+ <interface name="mgnt_n_s1" internal="mgnt_n.s1" type="avalon" dir="end" />
  <interface
    name="pulse_180deg_clk"
    internal="pulse_180deg.clk"
@@ -462,6 +606,106 @@
   <parameter name="generateIRQ" value="false" />
   <parameter name="irqType" value="LEVEL" />
   <parameter name="resetValue" value="0" />
+  <parameter name="simDoTestBenchWiring" value="false" />
+  <parameter name="simDrivenValue" value="0" />
+  <parameter name="width" value="32" />
+ </module>
+ <module
+   name="mgnt_chg_dlen"
+   kind="altera_avalon_pio"
+   version="17.1"
+   enabled="1">
+  <parameter name="bitClearingEdgeCapReg" value="false" />
+  <parameter name="bitModifyingOutReg" value="false" />
+  <parameter name="captureEdge" value="false" />
+  <parameter name="clockRate" value="0" />
+  <parameter name="direction" value="Output" />
+  <parameter name="edgeType" value="RISING" />
+  <parameter name="generateIRQ" value="false" />
+  <parameter name="irqType" value="LEVEL" />
+  <parameter name="resetValue" value="1" />
+  <parameter name="simDoTestBenchWiring" value="false" />
+  <parameter name="simDrivenValue" value="0" />
+  <parameter name="width" value="32" />
+ </module>
+ <module
+   name="mgnt_chg_plen"
+   kind="altera_avalon_pio"
+   version="17.1"
+   enabled="1">
+  <parameter name="bitClearingEdgeCapReg" value="false" />
+  <parameter name="bitModifyingOutReg" value="false" />
+  <parameter name="captureEdge" value="false" />
+  <parameter name="clockRate" value="0" />
+  <parameter name="direction" value="Output" />
+  <parameter name="edgeType" value="RISING" />
+  <parameter name="generateIRQ" value="false" />
+  <parameter name="irqType" value="LEVEL" />
+  <parameter name="resetValue" value="1" />
+  <parameter name="simDoTestBenchWiring" value="false" />
+  <parameter name="simDrivenValue" value="0" />
+  <parameter name="width" value="32" />
+ </module>
+ <module name="mgnt_d" kind="altera_avalon_pio" version="17.1" enabled="1">
+  <parameter name="bitClearingEdgeCapReg" value="false" />
+  <parameter name="bitModifyingOutReg" value="false" />
+  <parameter name="captureEdge" value="false" />
+  <parameter name="clockRate" value="0" />
+  <parameter name="direction" value="Output" />
+  <parameter name="edgeType" value="RISING" />
+  <parameter name="generateIRQ" value="false" />
+  <parameter name="irqType" value="LEVEL" />
+  <parameter name="resetValue" value="1" />
+  <parameter name="simDoTestBenchWiring" value="false" />
+  <parameter name="simDrivenValue" value="0" />
+  <parameter name="width" value="32" />
+ </module>
+ <module
+   name="mgnt_dchg_dlen"
+   kind="altera_avalon_pio"
+   version="17.1"
+   enabled="1">
+  <parameter name="bitClearingEdgeCapReg" value="false" />
+  <parameter name="bitModifyingOutReg" value="false" />
+  <parameter name="captureEdge" value="false" />
+  <parameter name="clockRate" value="0" />
+  <parameter name="direction" value="Output" />
+  <parameter name="edgeType" value="RISING" />
+  <parameter name="generateIRQ" value="false" />
+  <parameter name="irqType" value="LEVEL" />
+  <parameter name="resetValue" value="1" />
+  <parameter name="simDoTestBenchWiring" value="false" />
+  <parameter name="simDrivenValue" value="0" />
+  <parameter name="width" value="32" />
+ </module>
+ <module
+   name="mgnt_dchg_plen"
+   kind="altera_avalon_pio"
+   version="17.1"
+   enabled="1">
+  <parameter name="bitClearingEdgeCapReg" value="false" />
+  <parameter name="bitModifyingOutReg" value="false" />
+  <parameter name="captureEdge" value="false" />
+  <parameter name="clockRate" value="0" />
+  <parameter name="direction" value="Output" />
+  <parameter name="edgeType" value="RISING" />
+  <parameter name="generateIRQ" value="false" />
+  <parameter name="irqType" value="LEVEL" />
+  <parameter name="resetValue" value="1" />
+  <parameter name="simDoTestBenchWiring" value="false" />
+  <parameter name="simDrivenValue" value="0" />
+  <parameter name="width" value="32" />
+ </module>
+ <module name="mgnt_n" kind="altera_avalon_pio" version="17.1" enabled="1">
+  <parameter name="bitClearingEdgeCapReg" value="false" />
+  <parameter name="bitModifyingOutReg" value="false" />
+  <parameter name="captureEdge" value="false" />
+  <parameter name="clockRate" value="0" />
+  <parameter name="direction" value="Output" />
+  <parameter name="edgeType" value="RISING" />
+  <parameter name="generateIRQ" value="false" />
+  <parameter name="irqType" value="LEVEL" />
+  <parameter name="resetValue" value="1" />
   <parameter name="simDoTestBenchWiring" value="false" />
   <parameter name="simDrivenValue" value="0" />
   <parameter name="width" value="32" />

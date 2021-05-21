@@ -969,6 +969,24 @@ set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME NMR_PULSE_PROGRAM_tb -sec
 set_global_assignment -name EDA_TEST_BENCH_NAME NMR_Controller_tb -section_id eda_simulation
 set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id NMR_Controller_tb
 set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME NMR_Controller_tb -section_id NMR_Controller_tb
+set_global_assignment -name EDA_TEST_BENCH_NAME ADC_ACQ_WINGEN_tb -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id ADC_ACQ_WINGEN_tb
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME ADC_ACQ_WINGEN_tb -section_id ADC_ACQ_WINGEN_tb
+set_global_assignment -name EDA_TEST_BENCH_NAME GNRL_IQcomb_decimator_tb -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id GNRL_IQcomb_decimator_tb
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME GNRL_IQcomb_decimator_tb -section_id GNRL_IQcomb_decimator_tb
+set_global_assignment -name EDA_TEST_BENCH_FILE CODE_modelsim/i2c_tca9555/i2c_tca9555_tb.v -section_id i2c_tca9555_tb
+set_global_assignment -name EDA_TEST_BENCH_FILE "D:/NMR_PCBv5_HDLv1_2019_Quartus/QUARTUS-SoC/CODE_qsys/soc_system_v5/simulation/submodules/soc_system_v5_dconv_fir_coef_reload.txt" -section_id tb -library work
+set_global_assignment -name EDA_TEST_BENCH_FILE "D:/NMR_PCBv5_HDLv1_2019_Quartus/QUARTUS-SoC/CODE_qsys/soc_system_v5/simulation/submodules/soc_system_v5_dconv_fir_coef_reload_rtl.txt" -section_id tb -library work
+set_global_assignment -name EDA_TEST_BENCH_FILE "D:/NMR_PCBv5_HDLv1_2019_Quartus/QUARTUS-SoC/CODE_qsys/soc_system_v5/simulation/submodules/soc_system_v5_dconv_fir_input.txt" -section_id tb -library work
+set_global_assignment -name EDA_TEST_BENCH_FILE "D:/NMR_PCBv5_HDLv1_2019_Quartus/QUARTUS-SoC/CODE_qsys/soc_system_v5/simulation/submodules/soc_system_v5_dconv_fir_tb.vhd" -section_id tb -library work
+set_global_assignment -name EDA_TEST_BENCH_FILE "../QUARTUS-NoSoC/HDL/GNRL_dconv_nofilter_tb.v" -section_id GNRL_dconv_nofilter_tb
+set_global_assignment -name EDA_TEST_BENCH_FILE "../QUARTUS-NoSoC/HDL/GNRL_dconv_nofilter.v" -section_id GNRL_dconv_nofilter_tb
+set_global_assignment -name EDA_TEST_BENCH_FILE "../QUARTUS-NoSoC/HDL/NMR_PULSE_PROGRAM_tb.v" -section_id NMR_PULSE_PROGRAM_tb
+set_global_assignment -name EDA_TEST_BENCH_FILE "../QUARTUS-NoSoC/HDL/NMR_Controller_tb.v" -section_id NMR_Controller_tb
+set_global_assignment -name EDA_TEST_BENCH_FILE "../QUARTUS-NoSoC/HDL/ADC_ACQ_WINGEN_tb.v" -section_id ADC_ACQ_WINGEN_tb
+set_global_assignment -name EDA_TEST_BENCH_FILE "../QUARTUS-NoSoC/HDL/GNRL_IQcomb_decimator_tb.v" -section_id GNRL_IQcomb_decimator_tb
+set_global_assignment -name VERILOG_FILE "../QUARTUS-NoSoC/HDL/MGNT_Controller.v"
 set_global_assignment -name VERILOG_FILE "../QUARTUS-NoSoC/HDL/NMR_TX_SD_WINGEN.v"
 set_global_assignment -name VERILOG_FILE "../QUARTUS-NoSoC/HDL/NMR_QSW_EN_WINGEN.v"
 set_global_assignment -name QIP_FILE CODE_qsys/soc_system/synthesis/soc_system.qip
@@ -993,21 +1011,4 @@ set_global_assignment -name VERILOG_FILE DE1_SOC_Linux_FB.v
 set_global_assignment -name SIGNALTAP_FILE CODE_signaltap/signaltap.stp
 set_global_assignment -name SIGNALTAP_FILE ltc1746_adc_test.stp
 set_global_assignment -name VERILOG_FILE "../QUARTUS-NoSoC/HDL/NMR_RXDUP_EN_WINGEN.v"
-set_global_assignment -name EDA_TEST_BENCH_NAME ADC_ACQ_WINGEN_tb -section_id eda_simulation
-set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id ADC_ACQ_WINGEN_tb
-set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME ADC_ACQ_WINGEN_tb -section_id ADC_ACQ_WINGEN_tb
-set_global_assignment -name EDA_TEST_BENCH_NAME GNRL_IQcomb_decimator_tb -section_id eda_simulation
-set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id GNRL_IQcomb_decimator_tb
-set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME GNRL_IQcomb_decimator_tb -section_id GNRL_IQcomb_decimator_tb
-set_global_assignment -name EDA_TEST_BENCH_FILE CODE_modelsim/i2c_tca9555/i2c_tca9555_tb.v -section_id i2c_tca9555_tb
-set_global_assignment -name EDA_TEST_BENCH_FILE "D:/NMR_PCBv5_HDLv1_2019_Quartus/QUARTUS-SoC/CODE_qsys/soc_system_v5/simulation/submodules/soc_system_v5_dconv_fir_coef_reload.txt" -section_id tb -library work
-set_global_assignment -name EDA_TEST_BENCH_FILE "D:/NMR_PCBv5_HDLv1_2019_Quartus/QUARTUS-SoC/CODE_qsys/soc_system_v5/simulation/submodules/soc_system_v5_dconv_fir_coef_reload_rtl.txt" -section_id tb -library work
-set_global_assignment -name EDA_TEST_BENCH_FILE "D:/NMR_PCBv5_HDLv1_2019_Quartus/QUARTUS-SoC/CODE_qsys/soc_system_v5/simulation/submodules/soc_system_v5_dconv_fir_input.txt" -section_id tb -library work
-set_global_assignment -name EDA_TEST_BENCH_FILE "D:/NMR_PCBv5_HDLv1_2019_Quartus/QUARTUS-SoC/CODE_qsys/soc_system_v5/simulation/submodules/soc_system_v5_dconv_fir_tb.vhd" -section_id tb -library work
-set_global_assignment -name EDA_TEST_BENCH_FILE "../QUARTUS-NoSoC/HDL/GNRL_dconv_nofilter_tb.v" -section_id GNRL_dconv_nofilter_tb
-set_global_assignment -name EDA_TEST_BENCH_FILE "../QUARTUS-NoSoC/HDL/GNRL_dconv_nofilter.v" -section_id GNRL_dconv_nofilter_tb
-set_global_assignment -name EDA_TEST_BENCH_FILE "../QUARTUS-NoSoC/HDL/NMR_PULSE_PROGRAM_tb.v" -section_id NMR_PULSE_PROGRAM_tb
-set_global_assignment -name EDA_TEST_BENCH_FILE "../QUARTUS-NoSoC/HDL/NMR_Controller_tb.v" -section_id NMR_Controller_tb
-set_global_assignment -name EDA_TEST_BENCH_FILE "../QUARTUS-NoSoC/HDL/ADC_ACQ_WINGEN_tb.v" -section_id ADC_ACQ_WINGEN_tb
-set_global_assignment -name EDA_TEST_BENCH_FILE "../QUARTUS-NoSoC/HDL/GNRL_IQcomb_decimator_tb.v" -section_id GNRL_IQcomb_decimator_tb
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

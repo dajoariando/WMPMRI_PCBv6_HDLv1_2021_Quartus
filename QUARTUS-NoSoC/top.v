@@ -5,7 +5,7 @@
 
 module top(
 
-	//////////// ADC //////////
+	/*////////// ADC //////////
 	output		          		ADC_CONVST,
 	output		          		ADC_DIN,
 	input 		          		ADC_DOUT,
@@ -91,6 +91,12 @@ module top(
 
 	//////////// GPIO_1, GPIO_1 connect to GPIO Default //////////
 	inout 		    [35:0]		GPIO_1
+	
+	*/
+	
+	input idummy,
+	output odummy
+	
 );
 
 
@@ -99,6 +105,7 @@ module top(
 //  REG/WIRE declarations
 //=======================================================
 	
+	/*
 	localparam PULSE_AND_DELAY_WIDTH = 32;
 	localparam ECHOES_PER_SCAN_WIDTH = 32;
 	localparam ADC_INIT_DELAY_WIDTH = 32;
@@ -195,5 +202,9 @@ module top(
 	
 	assign nmr_controller_reset = !KEY[1];
 	assign fsm_start = !KEY[2] || fsm_start_issp;
+	
+	*/
+	
+	assign odummy = idummy;
 
 endmodule

@@ -286,6 +286,19 @@ module DE1_SOC_Linux_FB(
 	// wire i2c_ext_sda_oe;
 	// wire i2c_ext_scl_oe;
 	
+	// Magnet control signals
+	wire mgnt_rst;		// reset the hardware of the magnet programming
+	wire mgnt_start;	// start signal for the magnet programming
+	wire mgnt_stat;		// the running status of the magnet programming
+	wire mgnt_chg;		// charging pulse port
+	wire mgnt_dchg;		// discharging pulse port
+	wire [DATABUS_WIDTH-1:0] mgnt_chg_plen; // charging pulse length
+	wire [DATABUS_WIDTH-1:0] mgnt_chg_dlen; // charging delay length
+	wire [DATABUS_WIDTH-1:0] mgnt_dchg_plen; // discharging pulse length
+	wire [DATABUS_WIDTH-1:0] mgnt_dchg_dlen; // discharging delay length
+	wire [DATABUS_WIDTH-1:0] mgnt_n; // magnet programming repetition
+	wire [DATABUS_WIDTH-1:0] mgnt_d; // post-sequence delay
+	
 	// Clock Domain Crossing!!!
 	reg	[DATABUS_WIDTH-1:0]		pulse_90deg_reg;
 	reg	[DATABUS_WIDTH-1:0]		pulse_180deg_reg;
@@ -461,11 +474,14 @@ module DE1_SOC_Linux_FB(
 		
 		// Control Signals from/to HPS
 		.ctrl_in_export ({
+			mgnt_stat,				// the fsm status of the magnet programming
 			pll_analyzer_locked,
 			fsmstat,				// NMR sequence status (1 if the fsm is running and 0 if the fsm is stopped)
 			pll_nmr_sys_locked		// PLL lock status for the NMR pulse programmer
 		}),
 		.ctrl_out_export({
+			mgnt_start,				// start signal for the magnet programming
+			mgnt_rst,				// magnet reset
 			pulse_on_rx,
 			tx_opa_sd_msk,
 			tx_opa_en, 					// the transmitter enable signal (active low)
@@ -600,7 +616,15 @@ module DE1_SOC_Linux_FB(
 		.spi_mtch_ntwrk_MISO		(spi_mtch_ntwrk_MISO),	// spi_mtch_ntwrk.MISO
 		.spi_mtch_ntwrk_MOSI		(spi_mtch_ntwrk_MOSI),	//               .MOSI
 		.spi_mtch_ntwrk_SCLK		(spi_mtch_ntwrk_SCLK),	//               .SCLK
-		.spi_mtch_ntwrk_SS_n		(spi_mtch_ntwrk_SS_n) 	//               .SS_n
+		.spi_mtch_ntwrk_SS_n		(spi_mtch_ntwrk_SS_n), 	//               .SS_n
+		
+		// Magnet control
+		.mgnt_chg_plen_export		(mgnt_chg_plen),		// charging pulse length
+		.mgnt_chg_dlen_export		(mgnt_chg_dlen),		// charging delay length
+		.mgnt_dchg_plen_export		(mgnt_dchg_plen),		// discharging pulse length
+		.mgnt_dchg_dlen_export		(mgnt_dchg_dlen),		// discharging delay length
+		.mgnt_n_export				(mgnt_n),		// number of repetition
+		.mgnt_d_export				(mgnt_d)		// delay post magnet charging sequence
 	);
 
 	
@@ -729,6 +753,35 @@ module DE1_SOC_Linux_FB(
 		.ADC_CLKOUT			(adc_clkout),
 		.RESET				(nmr_controller_reset)
 	);
+	
+	
+	// Magnet controller
+	MGNT_Controller
+	#(
+		.DATABUS_WIDTH (DATABUS_WIDTH)
+	)
+	MGNT_Controller1
+	(
+		// control signals
+		.START		(mgnt_start),
+		.FSMSTAT	(mgnt_stat),
+		
+		// pulse parameters
+		.CHG_PLEN	(mgnt_chg_plen),	// charging pulse length
+		.CHG_DLEN	(mgnt_chg_dlen),	// delay length after charging
+		.DCHG_PLEN	(mgnt_dchg_plen),	// discharging pulse length
+		.DCHG_DLEN	(mgnt_dchg_dlen),	// delay length after discharging
+		.N			(mgnt_n),			// number of repetition
+		.D			(mgnt_d),			// delay post sequence
+		
+		// output pulses
+		.CHG_OUT	(mgnt_chg),	// charging output pulses
+		.DCHG_OUT	(mgnt_dchg), // discharging output pulses
+		
+		// system signals
+		.CLK		(pulseprog_clk),
+		.RESET		(mgnt_rst)
+	);
 
 
 
@@ -831,7 +884,9 @@ module DE1_SOC_Linux_FB(
 	assign GPIO_0[25] = enable_adc;
 	assign GPIO_0[0]	= tx_opa_en & ( !(tx_opa_sd_msk && tx_opa_sd) ); // The transmitter is enabled when the pin is state 'high'. tx_opa_en and tx_opa_sd (transmit shutdown) is active high signal. PUt tx_opa_sd_msk to 0 to disable tx_opa_sd effect on the output.
 
-	
+	// magnet controller output
+	assign GPIO_0[35] = mgnt_chg;
+	assign GPIO_0[34] = mgnt_dchg;
 
 
 
