@@ -885,8 +885,9 @@ module DE1_SOC_Linux_FB(
 	assign GPIO_0[0]	= tx_opa_en & ( !(tx_opa_sd_msk && tx_opa_sd) ); // The transmitter is enabled when the pin is state 'high'. tx_opa_en and tx_opa_sd (transmit shutdown) is active high signal. PUt tx_opa_sd_msk to 0 to disable tx_opa_sd effect on the output.
 
 	// magnet controller output
-	assign GPIO_0[35] = mgnt_chg;
-	assign GPIO_0[34] = mgnt_dchg;
+	assign GPIO_0[32] = mgnt_chg;
+	assign GPIO_0[33] = mgnt_dchg;
+	assign GPIO_0[35] = mgnt_chg || mgnt_dchg;
 
 
 
