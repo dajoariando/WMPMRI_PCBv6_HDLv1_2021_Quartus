@@ -13,7 +13,7 @@
    {
       datum _sortIndex
       {
-         value = "23";
+         value = "24";
          type = "int";
       }
    }
@@ -21,7 +21,7 @@
    {
       datum _sortIndex
       {
-         value = "22";
+         value = "23";
          type = "int";
       }
    }
@@ -55,7 +55,7 @@
    {
       datum _sortIndex
       {
-         value = "32";
+         value = "33";
          type = "int";
       }
    }
@@ -63,7 +63,7 @@
    {
       datum _sortIndex
       {
-         value = "31";
+         value = "32";
          type = "int";
       }
    }
@@ -226,7 +226,7 @@
    {
       datum _sortIndex
       {
-         value = "26";
+         value = "27";
          type = "int";
       }
    }
@@ -234,7 +234,7 @@
    {
       datum _sortIndex
       {
-         value = "25";
+         value = "26";
          type = "int";
       }
    }
@@ -268,7 +268,7 @@
    {
       datum _sortIndex
       {
-         value = "27";
+         value = "28";
          type = "int";
       }
    }
@@ -289,7 +289,7 @@
    {
       datum _sortIndex
       {
-         value = "28";
+         value = "29";
          type = "int";
       }
    }
@@ -310,7 +310,7 @@
    {
       datum _sortIndex
       {
-         value = "29";
+         value = "30";
          type = "int";
       }
    }
@@ -331,7 +331,7 @@
    {
       datum _sortIndex
       {
-         value = "37";
+         value = "38";
          type = "int";
       }
    }
@@ -352,7 +352,7 @@
    {
       datum _sortIndex
       {
-         value = "24";
+         value = "25";
          type = "int";
       }
    }
@@ -373,7 +373,7 @@
    {
       datum _sortIndex
       {
-         value = "20";
+         value = "21";
          type = "int";
       }
    }
@@ -381,7 +381,7 @@
    {
       datum _sortIndex
       {
-         value = "38";
+         value = "39";
          type = "int";
       }
    }
@@ -428,7 +428,7 @@
    {
       datum _sortIndex
       {
-         value = "35";
+         value = "36";
          type = "int";
       }
    }
@@ -470,7 +470,7 @@
    {
       datum _sortIndex
       {
-         value = "36";
+         value = "37";
          type = "int";
       }
    }
@@ -504,7 +504,7 @@
    {
       datum _sortIndex
       {
-         value = "21";
+         value = "22";
          type = "int";
       }
    }
@@ -512,7 +512,7 @@
    {
       datum _sortIndex
       {
-         value = "33";
+         value = "34";
          type = "int";
       }
    }
@@ -534,6 +534,22 @@
       datum baseAddress
       {
          value = "0";
+         type = "String";
+      }
+   }
+   element hs_spi
+   {
+      datum _sortIndex
+      {
+         value = "18";
+         type = "int";
+      }
+   }
+   element hs_spi.spi_control_port
+   {
+      datum baseAddress
+      {
+         value = "64";
          type = "String";
       }
    }
@@ -693,7 +709,7 @@
    {
       datum baseAddress
       {
-         value = "1264";
+         value = "1568";
          type = "String";
       }
    }
@@ -727,7 +743,7 @@
    {
       datum baseAddress
       {
-         value = "1104";
+         value = "1536";
          type = "String";
       }
    }
@@ -735,7 +751,7 @@
    {
       datum baseAddress
       {
-         value = "1248";
+         value = "1264";
          type = "String";
       }
    }
@@ -743,7 +759,7 @@
    {
       datum baseAddress
       {
-         value = "64";
+         value = "1248";
          type = "String";
       }
    }
@@ -751,7 +767,7 @@
    {
       datum baseAddress
       {
-         value = "96";
+         value = "1104";
          type = "String";
       }
    }
@@ -767,7 +783,7 @@
    {
       datum baseAddress
       {
-         value = "80";
+         value = "96";
          type = "String";
       }
    }
@@ -869,7 +885,7 @@
    {
       datum _sortIndex
       {
-         value = "30";
+         value = "31";
          type = "int";
       }
    }
@@ -890,7 +906,7 @@
    {
       datum _sortIndex
       {
-         value = "19";
+         value = "20";
          type = "int";
       }
    }
@@ -911,7 +927,7 @@
    {
       datum _sortIndex
       {
-         value = "18";
+         value = "19";
          type = "int";
       }
    }
@@ -932,7 +948,7 @@
    {
       datum _sortIndex
       {
-         value = "34";
+         value = "35";
          type = "int";
       }
    }
@@ -1127,6 +1143,7 @@
    type="reset"
    dir="start" />
  <interface name="hps_0_hps_io" internal="hps_0.hps_io" type="conduit" dir="end" />
+ <interface name="hs_spi" internal="hs_spi.external" type="conduit" dir="end" />
  <interface name="i2c_ext" internal="i2c_ext.i2c_serial" />
  <interface name="i2c_int" internal="i2c_int.i2c_serial" type="conduit" dir="end" />
  <interface
@@ -2658,6 +2675,22 @@
   <parameter name="usb_mp_clk_div" value="0" />
   <parameter name="use_default_mpu_clk" value="true" />
  </module>
+ <module name="hs_spi" kind="altera_avalon_spi" version="17.1" enabled="1">
+  <parameter name="avalonSpec" value="2.0" />
+  <parameter name="clockPhase" value="0" />
+  <parameter name="clockPolarity" value="0" />
+  <parameter name="dataWidth" value="16" />
+  <parameter name="disableAvalonFlowControl" value="false" />
+  <parameter name="inputClockRate" value="50000000" />
+  <parameter name="insertDelayBetweenSlaveSelectAndSClk" value="false" />
+  <parameter name="insertSync" value="false" />
+  <parameter name="lsbOrderedFirst" value="false" />
+  <parameter name="masterSPI" value="true" />
+  <parameter name="numberOfSlaves" value="1" />
+  <parameter name="syncRegDepth" value="2" />
+  <parameter name="targetClockRate" value="128000" />
+  <parameter name="targetSlaveSelectToSClkDelay" value="0.0" />
+ </module>
  <module name="i2c_ext" kind="altera_avalon_i2c" version="17.1" enabled="0">
   <parameter name="FIFO_DEPTH" value="32" />
   <parameter name="USE_AV_ST" value="0" />
@@ -2753,12 +2786,6 @@
   <parameter name="AUTO_MGNT_DCHG_DLEN_CLK_CLOCK_DOMAIN" value="6" />
   <parameter name="AUTO_MGNT_DCHG_DLEN_CLK_CLOCK_RATE" value="50000000" />
   <parameter name="AUTO_MGNT_DCHG_DLEN_CLK_RESET_DOMAIN" value="6" />
-  <parameter name="AUTO_MGNT_DCHG_D_CLK_CLOCK_DOMAIN" value="-1" />
-  <parameter name="AUTO_MGNT_DCHG_D_CLK_CLOCK_RATE" value="-1" />
-  <parameter name="AUTO_MGNT_DCHG_D_CLK_RESET_DOMAIN" value="-1" />
-  <parameter name="AUTO_MGNT_DCHG_N_CLK_CLOCK_DOMAIN" value="-1" />
-  <parameter name="AUTO_MGNT_DCHG_N_CLK_CLOCK_RATE" value="-1" />
-  <parameter name="AUTO_MGNT_DCHG_N_CLK_RESET_DOMAIN" value="-1" />
   <parameter name="AUTO_MGNT_DCHG_PLEN_CLK_CLOCK_DOMAIN" value="6" />
   <parameter name="AUTO_MGNT_DCHG_PLEN_CLK_CLOCK_RATE" value="50000000" />
   <parameter name="AUTO_MGNT_DCHG_PLEN_CLK_RESET_DOMAIN" value="6" />
@@ -3319,7 +3346,7 @@
    start="hps_0.h2f_lw_axi_master"
    end="nmr_parameters.echo_skip_s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x04f0" />
+  <parameter name="baseAddress" value="0x0620" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -3382,7 +3409,7 @@
    start="hps_0.h2f_lw_axi_master"
    end="nmr_parameters.mgnt_chg_dlen_s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0450" />
+  <parameter name="baseAddress" value="0x0600" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -3391,7 +3418,7 @@
    start="hps_0.h2f_lw_axi_master"
    end="nmr_parameters.mgnt_chg_plen_s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x04e0" />
+  <parameter name="baseAddress" value="0x04f0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -3400,7 +3427,7 @@
    start="hps_0.h2f_lw_axi_master"
    end="nmr_parameters.mgnt_d_s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0040" />
+  <parameter name="baseAddress" value="0x04e0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -3409,7 +3436,7 @@
    start="hps_0.h2f_lw_axi_master"
    end="nmr_parameters.mgnt_dchg_dlen_s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0060" />
+  <parameter name="baseAddress" value="0x0450" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -3427,7 +3454,7 @@
    start="hps_0.h2f_lw_axi_master"
    end="nmr_parameters.mgnt_n_s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0050" />
+  <parameter name="baseAddress" value="0x0060" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -3559,6 +3586,15 @@
  <connection
    kind="avalon"
    version="17.1"
+   start="hps_0.h2f_lw_axi_master"
+   end="hs_spi.spi_control_port">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0040" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="17.1"
    start="master_non_sec.master"
    end="nmr_parameters.adc_val_sub_s1">
   <parameter name="arbitrationPriority" value="1" />
@@ -3670,7 +3706,7 @@
    start="master_non_sec.master"
    end="nmr_parameters.echo_skip_s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x04f0" />
+  <parameter name="baseAddress" value="0x0620" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -3742,7 +3778,7 @@
    start="master_non_sec.master"
    end="nmr_parameters.mgnt_chg_dlen_s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0450" />
+  <parameter name="baseAddress" value="0x0600" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -3751,7 +3787,7 @@
    start="master_non_sec.master"
    end="nmr_parameters.mgnt_chg_plen_s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x04e0" />
+  <parameter name="baseAddress" value="0x04f0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -3760,7 +3796,7 @@
    start="master_non_sec.master"
    end="nmr_parameters.mgnt_d_s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0040" />
+  <parameter name="baseAddress" value="0x04e0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -3769,7 +3805,7 @@
    start="master_non_sec.master"
    end="nmr_parameters.mgnt_dchg_dlen_s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0060" />
+  <parameter name="baseAddress" value="0x0450" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -3787,7 +3823,7 @@
    start="master_non_sec.master"
    end="nmr_parameters.mgnt_n_s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0050" />
+  <parameter name="baseAddress" value="0x0060" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -4032,6 +4068,7 @@
    start="clk_0.clk"
    end="spi_afe_relays.clk" />
  <connection kind="clock" version="17.1" start="clk_0.clk" end="dac_preamp.clk" />
+ <connection kind="clock" version="17.1" start="clk_0.clk" end="hs_spi.clk" />
  <connection
    kind="clock"
    version="17.1"
@@ -4356,6 +4393,13 @@
   <parameter name="irqNumber" value="6" />
  </connection>
  <connection
+   kind="interrupt"
+   version="17.1"
+   start="hps_0.f2h_irq1"
+   end="hs_spi.irq">
+  <parameter name="irqNumber" value="4" />
+ </connection>
+ <connection
    kind="reset"
    version="17.1"
    start="clk_0.clk_reset"
@@ -4576,6 +4620,11 @@
    version="17.1"
    start="clk_0.clk_reset"
    end="dac_preamp.reset" />
+ <connection
+   kind="reset"
+   version="17.1"
+   start="clk_0.clk_reset"
+   end="hs_spi.reset" />
  <connection
    kind="reset"
    version="17.1"

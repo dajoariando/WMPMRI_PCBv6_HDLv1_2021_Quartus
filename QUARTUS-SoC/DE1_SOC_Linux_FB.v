@@ -286,6 +286,16 @@ module DE1_SOC_Linux_FB(
 	// wire i2c_ext_sda_oe;
 	// wire i2c_ext_scl_oe;
 	
+	// the hall effect sensor wires
+	wire HS_DR; // the data ready signal
+	wire HS_INV; // adc invert
+	wire HS_MISO; // spi miso
+	wire HS_SCLK; // spi sclk
+	wire HS_CS; // spi cs
+	wire HS_MOSI; // spi mosi
+	wire HS_DA; // digital or analog (put to 0 for digital)
+	wire HS_INIT; // initialize the ADC (put 1 to initialize, 0 for normal operation)
+	
 	// Magnet control signals
 	wire mgnt_rst;		// reset the hardware of the magnet programming
 	wire mgnt_start;	// start signal for the magnet programming
@@ -474,12 +484,16 @@ module DE1_SOC_Linux_FB(
 		
 		// Control Signals from/to HPS
 		.ctrl_in_export ({
+			HS_DR,					// the hall effect sensor data ready
 			mgnt_stat,				// the fsm status of the magnet programming
 			pll_analyzer_locked,
 			fsmstat,				// NMR sequence status (1 if the fsm is running and 0 if the fsm is stopped)
 			pll_nmr_sys_locked		// PLL lock status for the NMR pulse programmer
 		}),
 		.ctrl_out_export({
+			HS_INIT,
+			HS_DA,
+			HS_INV,
 			mgnt_start,				// start signal for the magnet programming
 			mgnt_rst,				// magnet reset
 			pulse_on_rx,
@@ -624,7 +638,12 @@ module DE1_SOC_Linux_FB(
 		.mgnt_dchg_plen_export		(mgnt_dchg_plen),		// discharging pulse length
 		.mgnt_dchg_dlen_export		(mgnt_dchg_dlen),		// discharging delay length
 		.mgnt_n_export				(mgnt_n),		// number of repetition
-		.mgnt_d_export				(mgnt_d)		// delay post magnet charging sequence
+		.mgnt_d_export				(mgnt_d),		// delay post magnet charging sequence
+		
+		.hs_spi_MISO                (HS_MISO),                               //                      hs_spi.MISO
+        .hs_spi_MOSI                (HS_MOSI),                               //                            .MOSI
+        .hs_spi_SCLK                (HS_SCLK),                               //                            .SCLK
+        .hs_spi_SS_n                (HS_CS)                                //                         
 	);
 
 	
@@ -783,8 +802,16 @@ module DE1_SOC_Linux_FB(
 		.RESET		(mgnt_rst)
 	);
 
-
-
+	
+	// the hall effect sensor control signal
+	assign HS_DR = GPIO_0[10];
+	assign GPIO_0[11] = HS_INV;
+	assign HS_MISO = GPIO_0[12];
+	assign GPIO_0[13] = HS_SCLK;
+	assign GPIO_0[14] = HS_CS;
+	assign GPIO_0[15] = HS_MOSI;
+	assign GPIO_0[16] = HS_DA;
+	assign GPIO_0[17] = HS_INIT;
 	
 	// PIN ASSIGNMENT
 	

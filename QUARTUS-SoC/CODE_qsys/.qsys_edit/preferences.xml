@@ -17,7 +17,8 @@
   </columns>
  </clocktable>
  <window width="1936" height="1056" x="-8" y="-8" />
- <library expandedCategories="Library,Project" />
+ <library
+   expandedCategories="Library,Library/Basic Functions/On Chip Memory,Library/Memory Interfaces and Controllers,Library/Memory Interfaces and Controllers/Flash,Library/Processors and Peripherals/Peripherals,Library/Interface Protocols,Project,Library/Interface Protocols/Serial,Library/Processors and Peripherals,Library/University Program/Generic IO,Library/University Program,Library/Basic Functions" />
  <hdlexample language="VERILOG" />
  <generation
    block_symbol_file="0"
