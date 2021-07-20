@@ -87,7 +87,9 @@ module NMR_PULSE_PROGRAM
 		OUT_EN	<= 1'b0;
 		ACQ_WND	<= 1'b0;
 		ACQ_WND_ALWAYS_ON	<= 1'b0;
+		NMR_MAIN_TIMER_CNT <= {NMR_MAIN_TIMER_WIDTH{1'b0}};
 		State	<= S0;
+		
 	end
 	
 	// main controller always loop
@@ -102,12 +104,15 @@ module NMR_PULSE_PROGRAM
 			OUT_EN	<= 1'b0;
 			ACQ_WND	<= 1'b0;
 			ACQ_WND_ALWAYS_ON	<= 1'b0;
+			NMR_MAIN_TIMER_CNT <= {NMR_MAIN_TIMER_WIDTH{1'b0}};
 			State	<= S0;
 			
 		end
 		else
 		begin
-		
+			
+			NMR_MAIN_TIMER_CNT <= NMR_MAIN_TIMER_CNT + 1'b1;
+			
 			case (State)
 			
 				S0 :
@@ -115,6 +120,7 @@ module NMR_PULSE_PROGRAM
 					
 					OUT_EN <= 1'b0; 
 					ECHO_PER_SCAN_CNT	<= {1'b1,{ (DATABUS_WIDTH-1) {1'b0} }} - 	ECHO_PER_SCAN + 1;
+					NMR_MAIN_TIMER_CNT <= {NMR_MAIN_TIMER_WIDTH{1'b0}};
 					
 					// Wait for the Start signal
 					if (START)
@@ -296,20 +302,20 @@ module NMR_PULSE_PROGRAM
 	end
 	
 	// main NMR counter always loop
-	always @(posedge CLK, posedge RESET)
-	begin
-		if (RESET)
-		begin
-			NMR_MAIN_TIMER_CNT <= {NMR_MAIN_TIMER_WIDTH{1'b0}};
-		end
-		else
-		begin
-			if (FSMSTAT)
-				NMR_MAIN_TIMER_CNT <= NMR_MAIN_TIMER_CNT + 1'b1;
-			else
-				NMR_MAIN_TIMER_CNT <= {NMR_MAIN_TIMER_WIDTH{1'b0}};
-		end
-	end
+	//always @(posedge CLK, posedge RESET)
+	//begin
+	//	if (RESET)
+	//	begin
+	//		NMR_MAIN_TIMER_CNT <= {NMR_MAIN_TIMER_WIDTH{1'b0}};
+	//	end
+	//	else
+	//	begin
+	//		if (FSMSTAT)
+	//			NMR_MAIN_TIMER_CNT <= NMR_MAIN_TIMER_CNT + 1'b1;
+	//		else
+	//			NMR_MAIN_TIMER_CNT <= {NMR_MAIN_TIMER_WIDTH{1'b0}};
+	//	end
+	//end
 	
 	// generate ADC clock
 	assign ADC_CLK = NMR_MAIN_TIMER_CNT[1]; // index 0 is to get CLK/2 frequency, and index 1 is to get CLK/4 frequency

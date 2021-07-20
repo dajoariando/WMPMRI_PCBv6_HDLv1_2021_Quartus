@@ -17,7 +17,7 @@ module NMR_TX_SD_WINGEN
 	
 	// clock domain crossing
 	reg ACQ_WND_REG;
-	always @(ADC_CLK)
+	always @(posedge ADC_CLK)
 	begin
 		ACQ_WND_REG <= ACQ_WND;
 	end

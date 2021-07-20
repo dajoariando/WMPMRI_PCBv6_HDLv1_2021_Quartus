@@ -42,7 +42,7 @@ module ADC_ACQ_WINGEN
 	
 	// clock domain crossing
 	reg ACQ_WND_REG;
-	always @(CLK)
+	always @(posedge CLK)
 	begin
 		ACQ_WND_REG <= ACQ_WND;
 	end
