@@ -829,8 +829,11 @@ module DE1_SOC_Linux_FB(
 	assign GPIO_1[16] = dac_grad_MOSI;
 	// assign GPIO_1[15] = dac_grad_CLR_n; 	// DAC_CLR is hardwired in PCB v6.0
 
-
-	assign adc_clkout = GPIO_1[21];		// uncomment this if the shifted clock from the ADC is used instead of clk_25M below
+	
+	// register driven ADC clock source
+	//assign adc_clkout = GPIO_1[21];		// uncomment this if the shifted clock from the ADC is used instead of clk_25M below
+	assign adc_clkout = adc_clk;
+	
 	assign GPIO_1[18] = adc_clk;		// ADC high speed clock ENC
 	// assign GPIO_1[18] = 1'b0; 		// ADC2_OE is hardwired in PCB v6.0
 	
