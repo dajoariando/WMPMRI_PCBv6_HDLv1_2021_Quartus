@@ -775,6 +775,12 @@ module DE1_SOC_Linux_FB(
 	
 	
 	// Magnet controller
+	reg mgnt_start_reg1, mgnt_start_reg2;
+	always @(posedge CLOCK_50) // synchronize the start signal
+	begin
+		mgnt_start_reg1 <= mgnt_start;
+		mgnt_start_reg2 <= mgnt_start_reg1;
+	end
 	MGNT_Controller
 	#(
 		.DATABUS_WIDTH (DATABUS_WIDTH)
@@ -782,7 +788,7 @@ module DE1_SOC_Linux_FB(
 	MGNT_Controller1
 	(
 		// control signals
-		.START		(mgnt_start),
+		.START		(mgnt_start_reg2),
 		.FSMSTAT	(mgnt_stat),
 		
 		// pulse parameters
@@ -798,7 +804,7 @@ module DE1_SOC_Linux_FB(
 		.DCHG_OUT	(mgnt_dchg), // discharging output pulses
 		
 		// system signals
-		.CLK		(pulseprog_clk),
+		.CLK		(CLOCK_50),
 		.RESET		(mgnt_rst)
 	);
 
