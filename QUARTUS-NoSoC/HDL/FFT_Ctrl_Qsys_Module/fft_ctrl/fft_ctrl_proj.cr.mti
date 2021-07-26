@@ -1,0 +1,8 @@
+C:/Users/dave/Documents/WORKSPACES/FFT/fft_ram/fft_ram.v {1 {vlog -work work -vopt -stats=none C:/Users/dave/Documents/WORKSPACES/FFT/fft_ram/fft_ram.v
+Model Technology ModelSim SE-64 vlog 2020.4 Compiler 2020.10 Oct 13 2020
+-- Compiling module fft_ram
+
+Top level modules:
+	fft_ram
+
+} {} {}}

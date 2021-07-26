@@ -1,0 +1,224 @@
+m255
+K4
+z2
+!s11f vlog 2020.4 2020.10, Oct 13 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/dave/Documents/WORKSPACES/FFT/fft_cnt
+T_opt
+!s110 1627265157
+V=OhHP@D51oMGC5;kD9VaW3
+Z1 04 11 4 work fft_ctrl_tb fast 0
+=1-52540005fb42-60fe1884-162-186c
+o-quiet -auto_acc_if_foreign -work work -L work -L work_lib -L fft_fifo -L fft_ii_0 -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L cyclonev
+Z2 tCvgOpt 0
+n@_opt
+Z3 OL;O;2020.4;71
+R0
+T_opt1
+!s110 1627270622
+VM4<HeRHJ@KRMfE9CjYB871
+R1
+=35-52540005fb42-60fe2dde-a1-2ef4
+Z4 o-quiet -auto_acc_if_foreign -work work -L work -L work_lib -L fft_fifo -L fft_ii_0 -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L cyclonev +acc
+R2
+n@_opt1
+R3
+R0
+T_opt2
+!s110 1627281460
+Vh8Y:6eKXN4U_6_RGfW9=62
+R1
+=3-52540005fb42-60fe5833-233-2cbc
+R4
+R2
+n@_opt2
+R3
+vfft_cnt_in
+!s110 1627270617
+!i10b 1
+!s100 b@g:MoETlX4X2X0l<JTeI2
+Z5 !s11b Dg1SIo80bB@j0V0VzS_@n1
+I:nTKfzjzlKeZWZBGFEm<53
+R0
+w1627268302
+8C:/Users/dave/Documents/WORKSPACES/FFT/fft_cnt/fft_cnt_in.v
+FC:/Users/dave/Documents/WORKSPACES/FFT/fft_cnt/fft_cnt_in.v
+!i122 173
+Z6 L0 1 105
+Z7 VDg1SIo80bB@j0V0VzS_@n1
+Z8 OL;L;2020.4;71
+r1
+!s85 0
+31
+!s108 1627270617.000000
+!s107 C:/Users/dave/Documents/WORKSPACES/FFT/fft_cnt/fft_cnt_in.v|
+!s90 -reportprogress|300|-work|work|-L|mtiAvm|-L|mtiRnm|-L|mtiOvm|-L|mtiUvm|-L|mtiUPF|-L|infact|C:/Users/dave/Documents/WORKSPACES/FFT/fft_cnt/fft_cnt_in.v|
+!i113 0
+Z9 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R2
+vfft_ctrl
+Z10 !s110 1627281454
+!i10b 1
+!s100 ONfDg3@45AkOo`nMfmEfc1
+R5
+IlQgdUImT:<f4QFe3S?J`72
+Z11 dC:/Users/dave/Documents/WORKSPACES/FFT/fft_ctrl
+w1627281196
+8C:/Users/dave/Documents/WORKSPACES/FFT/fft_ctrl/fft_ctrl.v
+FC:/Users/dave/Documents/WORKSPACES/FFT/fft_ctrl/fft_ctrl.v
+!i122 249
+L0 1 141
+R7
+R8
+r1
+!s85 0
+31
+Z12 !s108 1627281454.000000
+!s107 C:/Users/dave/Documents/WORKSPACES/FFT/fft_ctrl/fft_ctrl.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|C:/Users/dave/Documents/WORKSPACES/FFT/fft_ctrl/fft_ctrl.v|
+!i113 0
+R9
+R2
+vfft_ctrl_in
+R10
+!i10b 1
+!s100 foo8c]e?Xf6SG1REQIGg50
+R5
+IgX?gazNFD=6^0`Uj=^GNM2
+R11
+w1627272033
+8C:/Users/dave/Documents/WORKSPACES/FFT/fft_ctrl/fft_ctrl_in.v
+FC:/Users/dave/Documents/WORKSPACES/FFT/fft_ctrl/fft_ctrl_in.v
+!i122 250
+R6
+R7
+R8
+r1
+!s85 0
+31
+R12
+!s107 C:/Users/dave/Documents/WORKSPACES/FFT/fft_ctrl/fft_ctrl_in.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|C:/Users/dave/Documents/WORKSPACES/FFT/fft_ctrl/fft_ctrl_in.v|
+!i113 0
+R9
+R2
+vfft_ctrl_out
+R10
+!i10b 1
+!s100 <63QXFN4G]Ij3@4:oU6dm0
+R5
+IkWWPlgz9`Z>0M5`LPG1@A2
+R11
+w1627279411
+8C:/Users/dave/Documents/WORKSPACES/FFT/fft_ctrl/fft_ctrl_out.v
+FC:/Users/dave/Documents/WORKSPACES/FFT/fft_ctrl/fft_ctrl_out.v
+!i122 251
+L0 1 133
+R7
+R8
+r1
+!s85 0
+31
+R12
+!s107 C:/Users/dave/Documents/WORKSPACES/FFT/fft_ctrl/fft_ctrl_out.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|C:/Users/dave/Documents/WORKSPACES/FFT/fft_ctrl/fft_ctrl_out.v|
+!i113 0
+R9
+R2
+vfft_ctrl_tb
+R10
+!i10b 1
+!s100 hU[<]oRo]^Yem>n^:MNJQ2
+R5
+Ig>4zdLm3bU4[F7eA_<lS51
+R11
+w1627281444
+8C:/Users/dave/Documents/WORKSPACES/FFT/fft_ctrl/fft_ctrl_tb.v
+FC:/Users/dave/Documents/WORKSPACES/FFT/fft_ctrl/fft_ctrl_tb.v
+!i122 252
+L0 3 95
+R7
+R8
+r1
+!s85 0
+31
+R12
+!s107 C:/Users/dave/Documents/WORKSPACES/FFT/fft_ctrl/fft_ctrl_tb.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|C:/Users/dave/Documents/WORKSPACES/FFT/fft_ctrl/fft_ctrl_tb.v|
+!i113 0
+R9
+R2
+vfft_fifo
+!s110 1627281282
+!i10b 1
+!s100 d2;a6CoICQ_785iFId<:j2
+R5
+IZ0lY]B:z<]2d^0R0<dS4=1
+R11
+w1627262470
+8C:/Users/dave/Documents/WORKSPACES/FFT/fft_fifo/fft_fifo/simulation/fft_fifo.v
+FC:/Users/dave/Documents/WORKSPACES/FFT/fft_fifo/fft_fifo/simulation/fft_fifo.v
+!i122 242
+L0 6 63
+R7
+R8
+r1
+!s85 0
+31
+!s108 1627281282.000000
+!s107 C:/Users/dave/Documents/WORKSPACES/FFT/fft_fifo/fft_fifo/simulation/fft_fifo.v|
+!s90 -reportprogress|300|C:/Users/dave/Documents/WORKSPACES/FFT/fft_fifo/fft_fifo/simulation/fft_fifo.v|
+!i113 0
+Z13 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R2
+vfft_gp
+!s110 1627281299
+!i10b 1
+!s100 UFWkmkfmzND>]QL`I?FE52
+R5
+I5K?XHTXVJ4FTRVE<AC9Gf0
+R11
+w1627262467
+8C:/Users/dave/Documents/WORKSPACES/FFT/fft_gp/simulation/fft_gp.v
+FC:/Users/dave/Documents/WORKSPACES/FFT/fft_gp/simulation/fft_gp.v
+!i122 243
+L0 6 45
+R7
+R8
+r1
+!s85 0
+31
+!s108 1627281299.000000
+!s107 C:/Users/dave/Documents/WORKSPACES/FFT/fft_gp/simulation/fft_gp.v|
+!s90 -reportprogress|300|C:/Users/dave/Documents/WORKSPACES/FFT/fft_gp/simulation/fft_gp.v|
+!i113 0
+R13
+R2
+vfft_ram
+R10
+!i10b 1
+!s100 dAdgV<jUTnPoAkQ96j_XT2
+R5
+ISHg0MzCUF^M2[gcaJY>i>1
+R11
+w1627274088
+8C:/Users/dave/Documents/WORKSPACES/FFT/fft_ram/fft_ram.v
+FC:/Users/dave/Documents/WORKSPACES/FFT/fft_ram/fft_ram.v
+!i122 253
+L0 39 77
+R7
+R8
+r1
+!s85 0
+31
+R12
+!s107 C:/Users/dave/Documents/WORKSPACES/FFT/fft_ram/fft_ram.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|C:/Users/dave/Documents/WORKSPACES/FFT/fft_ram/fft_ram.v|
+!i113 0
+R9
+R2

@@ -1,0 +1,80 @@
+m255
+K4
+z2
+!s11f vlog 2020.4 2020.10, Oct 13 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/dave/Documents/WORKSPACES/FFT/fft_fifo/fft_fifo/simulation/mentor
+valtera_avalon_dc_fifo
+Z1 !s110 1627259972
+!i10b 1
+!s100 `6?9V0@[XBBZG@i0N`3ik1
+Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
+Ii3NlI_9P]JlS;XM_9=HHD1
+R0
+Z3 w1627250853
+8./../submodules/altera_avalon_dc_fifo.v
+F./../submodules/altera_avalon_dc_fifo.v
+!i122 3
+L0 13 718
+Z4 VDg1SIo80bB@j0V0VzS_@n1
+Z5 OL;L;2020.4;71
+r1
+!s85 0
+31
+Z6 !s108 1627259972.000000
+!s107 ./../submodules/altera_avalon_dc_fifo.v|
+!s90 -reportprogress|300|./../submodules/altera_avalon_dc_fifo.v|-work|fft_fifo|
+!i113 0
+Z7 o-work fft_fifo -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z8 tCvgOpt 0
+valtera_dcfifo_synchronizer_bundle
+R1
+!i10b 1
+!s100 T=8BW^76Q>3@L7G[fdF5`3
+R2
+I>BaI<L94lXUDXe[Znc<6I3
+R0
+R3
+8./../submodules/altera_dcfifo_synchronizer_bundle.v
+F./../submodules/altera_dcfifo_synchronizer_bundle.v
+!i122 4
+L0 8 30
+R4
+R5
+r1
+!s85 0
+31
+R6
+!s107 ./../submodules/altera_dcfifo_synchronizer_bundle.v|
+!s90 -reportprogress|300|./../submodules/altera_dcfifo_synchronizer_bundle.v|-work|fft_fifo|
+!i113 0
+R7
+R8
+valtera_std_synchronizer_nocut
+R1
+!i10b 1
+!s100 ln=PjYiP9bQ`W_6O`[Kc43
+R2
+IS2PPooE?aMLjK0j6>z<cS3
+R0
+R3
+8./../submodules/altera_std_synchronizer_nocut.v
+F./../submodules/altera_std_synchronizer_nocut.v
+!i122 5
+L0 44 149
+R4
+R5
+r1
+!s85 0
+31
+R6
+!s107 ./../submodules/altera_std_synchronizer_nocut.v|
+!s90 -reportprogress|300|./../submodules/altera_std_synchronizer_nocut.v|-work|fft_fifo|
+!i113 0
+R7
+R8

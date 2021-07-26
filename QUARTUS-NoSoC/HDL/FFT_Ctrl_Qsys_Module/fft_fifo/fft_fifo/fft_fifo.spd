@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simPackage>
+ <file
+   path="simulation/submodules/altera_avalon_dc_fifo.v"
+   type="VERILOG"
+   library="fft_fifo" />
+ <file
+   path="simulation/submodules/altera_dcfifo_synchronizer_bundle.v"
+   type="VERILOG"
+   library="fft_fifo" />
+ <file
+   path="simulation/submodules/altera_std_synchronizer_nocut.v"
+   type="VERILOG"
+   library="fft_fifo" />
+ <file path="simulation/fft_fifo.v" type="VERILOG" />
+ <topLevel name="fft_fifo" />
+ <deviceFamily name="cyclonev" />
+</simPackage>

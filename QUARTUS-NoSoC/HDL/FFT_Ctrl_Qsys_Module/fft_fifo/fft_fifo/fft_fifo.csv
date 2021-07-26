@@ -1,0 +1,20 @@
+# system info fft_fifo on 2021.07.25.21:08:02
+system_info:
+name,value
+DEVICE,5CSEMA5F31C6
+DEVICE_FAMILY,Cyclone V
+GENERATION_ID,1627261681
+#
+#
+# Files generated for fft_fifo on 2021.07.25.21:08:02
+files:
+filepath,kind,attributes,module,is_top
+simulation/fft_fifo.v,VERILOG,,fft_fifo,true
+simulation/submodules/altera_avalon_dc_fifo.v,VERILOG,,altera_avalon_dc_fifo,false
+simulation/submodules/altera_dcfifo_synchronizer_bundle.v,VERILOG,,altera_avalon_dc_fifo,false
+simulation/submodules/altera_std_synchronizer_nocut.v,VERILOG,,altera_avalon_dc_fifo,false
+#
+# Map from instance-path to kind of module
+instances:
+instancePath,module
+fft_fifo.fft_fifo,altera_avalon_dc_fifo

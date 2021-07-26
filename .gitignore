@@ -26,7 +26,7 @@
 *.qar
 *.sopc_builder
 *example*
-*.tcl
+# *.tcl
 *.pin
 *.mif
 *.hex

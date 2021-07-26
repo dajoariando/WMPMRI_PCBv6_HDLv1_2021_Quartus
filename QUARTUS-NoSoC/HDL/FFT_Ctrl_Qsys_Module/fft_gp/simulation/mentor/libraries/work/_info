@@ -1,0 +1,34 @@
+m255
+K4
+z2
+!s11f vlog 2020.4 2020.10, Oct 13 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/dave/Documents/WORKSPACES/FFT/fft_gp/simulation/mentor
+vfft_gp
+!s110 1627259781
+!i10b 1
+!s100 UFWkmkfmzND>]QL`I?FE52
+!s11b Dg1SIo80bB@j0V0VzS_@n1
+I[R_3^X`Bo?HCa`XJMJlLU3
+R0
+w1627242119
+8./../fft_gp.v
+F./../fft_gp.v
+!i122 0
+L0 6 45
+VDg1SIo80bB@j0V0VzS_@n1
+OL;L;2020.4;71
+r1
+!s85 0
+31
+!s108 1627259781.000000
+!s107 ./../fft_gp.v|
+!s90 -reportprogress|300|./../fft_gp.v|
+!i113 0
+o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+tCvgOpt 0

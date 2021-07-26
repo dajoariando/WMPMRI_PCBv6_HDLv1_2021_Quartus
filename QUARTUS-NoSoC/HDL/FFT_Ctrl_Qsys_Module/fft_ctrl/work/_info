@@ -1,0 +1,80 @@
+m255
+K4
+z2
+!s11f vlog 2020.4 2020.10, Oct 13 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/dave/Documents/WORKSPACES/FFT/fft_cnt
+vfft_cnt_in
+Z1 !s110 1627262209
+!i10b 1
+!s100 SVBi2jBe<EeOnYzQoz46g3
+Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
+IXQSJ>Y^=jY6lHllMG2m:61
+R0
+w1627258712
+8C:/Users/dave/Documents/WORKSPACES/FFT/fft_cnt/fft_cnt_in.v
+FC:/Users/dave/Documents/WORKSPACES/FFT/fft_cnt/fft_cnt_in.v
+!i122 0
+Z3 L0 1 102
+Z4 VDg1SIo80bB@j0V0VzS_@n1
+Z5 OL;L;2020.4;71
+r1
+!s85 0
+31
+Z6 !s108 1627262209.000000
+!s107 C:/Users/dave/Documents/WORKSPACES/FFT/fft_cnt/fft_cnt_in.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|C:/Users/dave/Documents/WORKSPACES/FFT/fft_cnt/fft_cnt_in.v|
+!i113 0
+Z7 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z8 tCvgOpt 0
+vfft_ctrl
+R1
+!i10b 1
+!s100 kk`B?MC83W683L6]IV>A_3
+R2
+I@8W7D3GTPk]KhV<8Fm3iG0
+R0
+w1627259003
+8C:/Users/dave/Documents/WORKSPACES/FFT/fft_cnt/fft_ctrl.v
+FC:/Users/dave/Documents/WORKSPACES/FFT/fft_cnt/fft_ctrl.v
+!i122 1
+R3
+R4
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/dave/Documents/WORKSPACES/FFT/fft_cnt/fft_ctrl.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|C:/Users/dave/Documents/WORKSPACES/FFT/fft_cnt/fft_ctrl.v|
+!i113 0
+R7
+R8
+vfft_ctrl_tb
+R1
+!i10b 1
+!s100 khi91Yg8z;aElB9USC^zo2
+R2
+I3bTT27aW`?@g>z9B=mBhO2
+R0
+w1627258625
+8C:/Users/dave/Documents/WORKSPACES/FFT/fft_cnt/fft_ctrl_tb.v
+FC:/Users/dave/Documents/WORKSPACES/FFT/fft_cnt/fft_ctrl_tb.v
+!i122 2
+L0 1 80
+R4
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/dave/Documents/WORKSPACES/FFT/fft_cnt/fft_ctrl_tb.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|C:/Users/dave/Documents/WORKSPACES/FFT/fft_cnt/fft_ctrl_tb.v|
+!i113 0
+R7
+R8
