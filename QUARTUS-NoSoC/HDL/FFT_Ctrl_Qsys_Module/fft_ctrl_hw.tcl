@@ -40,12 +40,12 @@ add_fileset QUARTUS_SYNTH QUARTUS_SYNTH "" ""
 set_fileset_property QUARTUS_SYNTH TOP_LEVEL fft_ctrl
 set_fileset_property QUARTUS_SYNTH ENABLE_RELATIVE_INCLUDE_PATHS false
 set_fileset_property QUARTUS_SYNTH ENABLE_FILE_OVERWRITE_MODE false
-add_fileset_file fft_ctrl.v VERILOG PATH ../FFT/fft_ctrl/fft_ctrl.v TOP_LEVEL_FILE
-add_fileset_file fft_ctrl_in.v VERILOG PATH ../FFT/fft_ctrl/fft_ctrl_in.v
-add_fileset_file fft_ctrl_out.v VERILOG PATH ../FFT/fft_ctrl/fft_ctrl_out.v
-add_fileset_file fft_fifo.qip OTHER PATH ../FFT/fft_fifo/fft_fifo/synthesis/fft_fifo.qip
-add_fileset_file fft_gp.qip OTHER PATH ../FFT/fft_gp/synthesis/fft_gp.qip
-add_fileset_file fft_ram.qip OTHER PATH ../FFT/fft_ram/fft_ram.qip
+add_fileset_file fft_ctrl.v VERILOG PATH ./fft_ctrl/fft_ctrl.v TOP_LEVEL_FILE
+add_fileset_file fft_ctrl_in.v VERILOG PATH ./fft_ctrl/fft_ctrl_in.v
+add_fileset_file fft_ctrl_out.v VERILOG PATH ./fft_ctrl/fft_ctrl_out.v
+add_fileset_file fft_fifo.qip OTHER PATH ./fft_fifo/fft_fifo/synthesis/fft_fifo.qip
+add_fileset_file fft_gp.qip OTHER PATH ./fft_gp/synthesis/fft_gp.qip
+add_fileset_file fft_ram.qip OTHER PATH ./fft_ram/fft_ram.qip
 
 
 # 

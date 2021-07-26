@@ -29,7 +29,7 @@
 # *.tcl
 *.pin
 *.mif
-*.hex
+#*.hex
 *.sld
 *.log
 

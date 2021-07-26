@@ -162,6 +162,7 @@ module DE1_SOC_Linux_FB(
 //=======================================================
 
 	// control output signal
+	wire			fft_start, fft_start_sync;	// start signal for the fft module
 	wire			nmr_clk_gate_avln_cnt;	// nmr clock gate controlled by the avalon bus
 	wire			activate_adc_avln_cnt;	// adc control signal to be activated from the avalon memory map bus / hard processor
 	wire			adc_fifo_reset;
@@ -308,6 +309,9 @@ module DE1_SOC_Linux_FB(
 	wire [DATABUS_WIDTH-1:0] mgnt_dchg_dlen; // discharging delay length
 	wire [DATABUS_WIDTH-1:0] mgnt_n; // magnet programming repetition
 	wire [DATABUS_WIDTH-1:0] mgnt_d; // post-sequence delay
+	
+	// Custom FFT control signals
+	wire [DATABUS_WIDTH-1:0] fftpts; // the variable data length for fft module
 	
 	// Clock Domain Crossing!!!
 	reg	[DATABUS_WIDTH-1:0]		pulse_90deg_reg;
@@ -491,6 +495,7 @@ module DE1_SOC_Linux_FB(
 			pll_nmr_sys_locked		// PLL lock status for the NMR pulse programmer
 		}),
 		.ctrl_out_export({
+			fft_start,
 			HS_INIT,
 			HS_DA,
 			HS_INV,
@@ -640,12 +645,39 @@ module DE1_SOC_Linux_FB(
 		.mgnt_n_export				(mgnt_n),		// number of repetition
 		.mgnt_d_export				(mgnt_d),		// delay post magnet charging sequence
 		
+		// Hall effect sensor control signals
 		.hs_spi_MISO                (HS_MISO),                               //                      hs_spi.MISO
         .hs_spi_MOSI                (HS_MOSI),                               //                            .MOSI
         .hs_spi_SCLK                (HS_SCLK),                               //                            .SCLK
-        .hs_spi_SS_n                (HS_CS)                                //                         
+        .hs_spi_SS_n                (HS_CS),                                //                         
+	
+		// Custom FFT control module. Reset signal is combined with the adc_fifo_reset
+		.fft_ctrl_data                             (adc_data_in[13:0]),                             //                    fft_ctrl.data
+        .fft_ctrl_fftpts_in                        (fftpts[10:0]),                        //                            .fftpts_in
+        .fft_ctrl_start                            (fft_start_sync),                            //                            .start
+        .ffpts_export                              (fftpts)                               //                       ffpts.export
 	);
-
+	
+	// generating a single pulse using FSMSTAT that is synchronized with ADC_CLKOUT
+	GNRL_delayed_pulser
+	#(
+		.DELAY_WIDTH (4)
+	)
+	GNRL_delayed_pulser_FFT_CTRL
+	(
+		// signals
+		.SIG_IN		(fft_start),
+		.SIG_OUT	(fft_start_sync),
+		
+		// parameters
+		.DELAY		(5'd2), // set the delay to 2 (minimum)
+		
+		// system
+		.CLK		(adc_clkout),
+		.RESET		(nmr_controller_reset) // this is unsynchronized reset so it could be unrelated to the CLK used.
+	
+	);
+	
 	
 	// generating a reset single pulse using FSMSTAT that is synchronized with ADC_CLKOUT
 	GNRL_delayed_pulser

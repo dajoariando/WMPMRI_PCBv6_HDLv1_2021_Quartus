@@ -331,7 +331,7 @@
    {
       datum _sortIndex
       {
-         value = "38";
+         value = "40";
          type = "int";
       }
    }
@@ -369,6 +369,38 @@
          type = "String";
       }
    }
+   element ffpts
+   {
+      datum _sortIndex
+      {
+         value = "37";
+         type = "int";
+      }
+   }
+   element ffpts.s1
+   {
+      datum baseAddress
+      {
+         value = "96";
+         type = "String";
+      }
+   }
+   element fft_ctrl
+   {
+      datum _sortIndex
+      {
+         value = "36";
+         type = "int";
+      }
+   }
+   element fft_ctrl.s0
+   {
+      datum baseAddress
+      {
+         value = "67117056";
+         type = "String";
+      }
+   }
    element fifo_clk_bridge
    {
       datum _sortIndex
@@ -381,7 +413,7 @@
    {
       datum _sortIndex
       {
-         value = "39";
+         value = "41";
          type = "int";
       }
    }
@@ -428,7 +460,7 @@
    {
       datum _sortIndex
       {
-         value = "36";
+         value = "38";
          type = "int";
       }
    }
@@ -470,7 +502,7 @@
    {
       datum _sortIndex
       {
-         value = "37";
+         value = "39";
          type = "int";
       }
    }
@@ -709,7 +741,7 @@
    {
       datum baseAddress
       {
-         value = "1568";
+         value = "1584";
          type = "String";
       }
    }
@@ -743,7 +775,7 @@
    {
       datum baseAddress
       {
-         value = "1536";
+         value = "1568";
          type = "String";
       }
    }
@@ -751,7 +783,7 @@
    {
       datum baseAddress
       {
-         value = "1264";
+         value = "1536";
          type = "String";
       }
    }
@@ -759,7 +791,7 @@
    {
       datum baseAddress
       {
-         value = "1248";
+         value = "1264";
          type = "String";
       }
    }
@@ -767,7 +799,7 @@
    {
       datum baseAddress
       {
-         value = "1104";
+         value = "1248";
          type = "String";
       }
    }
@@ -775,7 +807,7 @@
    {
       datum baseAddress
       {
-         value = "112";
+         value = "1104";
          type = "String";
       }
    }
@@ -783,7 +815,7 @@
    {
       datum baseAddress
       {
-         value = "96";
+         value = "112";
          type = "String";
       }
    }
@@ -1132,6 +1164,16 @@
    type="conduit"
    dir="end" />
  <interface
+   name="ffpts"
+   internal="ffpts.external_connection"
+   type="conduit"
+   dir="end" />
+ <interface
+   name="fft_ctrl"
+   internal="fft_ctrl.ext_interface"
+   type="conduit"
+   dir="end" />
+ <interface
    name="fifo_clk_bridge_in"
    internal="fifo_clk_bridge.in_clk"
    type="clock"
@@ -1262,7 +1304,7 @@
  <module
    name="adc_fifo_dc"
    kind="altera_avalon_dc_fifo"
-   version="17.1"
+   version="18.1"
    enabled="1">
   <parameter name="BITS_PER_SYMBOL" value="32" />
   <parameter name="CHANNEL_WIDTH" value="0" />
@@ -1280,7 +1322,7 @@
  <module
    name="adc_fifo_mem"
    kind="altera_avalon_fifo"
-   version="17.1"
+   version="18.1"
    enabled="1">
   <parameter name="avalonMMAvalonMMDataWidth" value="32" />
   <parameter name="avalonMMAvalonSTDataWidth" value="32" />
@@ -1352,7 +1394,7 @@
   <parameter name="RMASTER_BURST_TARGET" value="32" />
   <parameter name="RMASTER_FIFO_DEPTH" value="64" />
  </module>
- <module name="analyzer_pll" kind="altera_pll" version="17.1" enabled="1">
+ <module name="analyzer_pll" kind="altera_pll" version="18.1" enabled="1">
   <parameter name="debug_print_output" value="false" />
   <parameter name="debug_use_rbc_taf_method" value="false" />
   <parameter name="device" value="5CSEMA5F31C6" />
@@ -1558,7 +1600,7 @@
  <module
    name="analyzer_pll_reconfig"
    kind="altera_pll_reconfig"
-   version="17.1"
+   version="18.1"
    enabled="1">
   <parameter name="ENABLE_BYTEENABLE" value="false" />
   <parameter name="ENABLE_MIF" value="false" />
@@ -1568,7 +1610,7 @@
  <module
    name="aux_cnt_out"
    kind="altera_avalon_pio"
-   version="17.1"
+   version="18.1"
    enabled="0">
   <parameter name="bitClearingEdgeCapReg" value="false" />
   <parameter name="bitModifyingOutReg" value="false" />
@@ -1583,13 +1625,13 @@
   <parameter name="simDrivenValue" value="0" />
   <parameter name="width" value="32" />
  </module>
- <module name="clk_0" kind="clock_source" version="17.1" enabled="1">
+ <module name="clk_0" kind="clock_source" version="18.1" enabled="1">
   <parameter name="clockFrequency" value="50000000" />
   <parameter name="clockFrequencyKnown" value="true" />
   <parameter name="inputClockFrequency" value="0" />
   <parameter name="resetSynchronousEdges" value="NONE" />
  </module>
- <module name="ctrl_in" kind="altera_avalon_pio" version="17.1" enabled="1">
+ <module name="ctrl_in" kind="altera_avalon_pio" version="18.1" enabled="1">
   <parameter name="bitClearingEdgeCapReg" value="false" />
   <parameter name="bitModifyingOutReg" value="false" />
   <parameter name="captureEdge" value="false" />
@@ -1603,7 +1645,7 @@
   <parameter name="simDrivenValue" value="0" />
   <parameter name="width" value="8" />
  </module>
- <module name="ctrl_out" kind="altera_avalon_pio" version="17.1" enabled="1">
+ <module name="ctrl_out" kind="altera_avalon_pio" version="18.1" enabled="1">
   <parameter name="bitClearingEdgeCapReg" value="false" />
   <parameter name="bitModifyingOutReg" value="false" />
   <parameter name="captureEdge" value="false" />
@@ -1617,7 +1659,7 @@
   <parameter name="simDrivenValue" value="0" />
   <parameter name="width" value="32" />
  </module>
- <module name="dac_grad" kind="altera_avalon_spi" version="17.1" enabled="1">
+ <module name="dac_grad" kind="altera_avalon_spi" version="18.1" enabled="1">
   <parameter name="avalonSpec" value="2.0" />
   <parameter name="clockPhase" value="0" />
   <parameter name="clockPolarity" value="1" />
@@ -1633,7 +1675,7 @@
   <parameter name="targetClockRate" value="128000" />
   <parameter name="targetSlaveSelectToSClkDelay" value="0.0" />
  </module>
- <module name="dac_preamp" kind="altera_avalon_spi" version="17.1" enabled="1">
+ <module name="dac_preamp" kind="altera_avalon_spi" version="18.1" enabled="1">
   <parameter name="avalonSpec" value="2.0" />
   <parameter name="clockPhase" value="0" />
   <parameter name="clockPolarity" value="1" />
@@ -1652,7 +1694,7 @@
  <module
    name="dconv_fifo_dc"
    kind="altera_avalon_dc_fifo"
-   version="17.1"
+   version="18.1"
    enabled="1">
   <parameter name="BITS_PER_SYMBOL" value="32" />
   <parameter name="CHANNEL_WIDTH" value="0" />
@@ -1670,7 +1712,7 @@
  <module
    name="dconv_fifo_mem"
    kind="altera_avalon_fifo"
-   version="17.1"
+   version="18.1"
    enabled="1">
   <parameter name="avalonMMAvalonMMDataWidth" value="32" />
   <parameter name="avalonMMAvalonSTDataWidth" value="32" />
@@ -1695,7 +1737,7 @@
  <module
    name="dconv_fir"
    kind="altera_fir_compiler_ii"
-   version="17.1"
+   version="18.1"
    enabled="1">
   <parameter name="L_bandsFilter" value="1" />
   <parameter name="MODE_STRING" value="None Set" />
@@ -1743,7 +1785,7 @@
  <module
    name="dconv_fir_q"
    kind="altera_fir_compiler_ii"
-   version="17.1"
+   version="18.1"
    enabled="1">
   <parameter name="L_bandsFilter" value="1" />
   <parameter name="MODE_STRING" value="None Set" />
@@ -1788,7 +1830,7 @@
   <parameter name="speedGrade" value="medium" />
   <parameter name="symmetryMode" value="nsym" />
  </module>
- <module name="dma_dconvi" kind="altera_avalon_dma" version="17.1" enabled="1">
+ <module name="dma_dconvi" kind="altera_avalon_dma" version="18.1" enabled="1">
   <parameter name="allowByteTransactions" value="false" />
   <parameter name="allowDoubleWordTransactions" value="false" />
   <parameter name="allowHalfWordTransactions" value="false" />
@@ -1809,7 +1851,7 @@
   <parameter name="writeSlaveAddressWidthMax" value="26" />
   <parameter name="writeSlaveDataWidthMax" value="16" />
  </module>
- <module name="dma_dummy" kind="altera_avalon_dma" version="17.1" enabled="0">
+ <module name="dma_dummy" kind="altera_avalon_dma" version="18.1" enabled="0">
   <parameter name="allowByteTransactions" value="false" />
   <parameter name="allowDoubleWordTransactions" value="false" />
   <parameter name="allowHalfWordTransactions" value="false" />
@@ -1830,7 +1872,7 @@
   <parameter name="writeSlaveAddressWidthMax" value="26" />
   <parameter name="writeSlaveDataWidthMax" value="16" />
  </module>
- <module name="dma_fifo" kind="altera_avalon_dma" version="17.1" enabled="1">
+ <module name="dma_fifo" kind="altera_avalon_dma" version="18.1" enabled="1">
   <parameter name="allowByteTransactions" value="false" />
   <parameter name="allowDoubleWordTransactions" value="false" />
   <parameter name="allowHalfWordTransactions" value="false" />
@@ -1851,10 +1893,33 @@
   <parameter name="writeSlaveAddressWidthMax" value="26" />
   <parameter name="writeSlaveDataWidthMax" value="16" />
  </module>
+ <module name="ffpts" kind="altera_avalon_pio" version="18.1" enabled="1">
+  <parameter name="bitClearingEdgeCapReg" value="false" />
+  <parameter name="bitModifyingOutReg" value="false" />
+  <parameter name="captureEdge" value="false" />
+  <parameter name="clockRate" value="50000000" />
+  <parameter name="direction" value="Output" />
+  <parameter name="edgeType" value="RISING" />
+  <parameter name="generateIRQ" value="false" />
+  <parameter name="irqType" value="LEVEL" />
+  <parameter name="resetValue" value="0" />
+  <parameter name="simDoTestBenchWiring" value="false" />
+  <parameter name="simDrivenValue" value="0" />
+  <parameter name="width" value="32" />
+ </module>
+ <module name="fft_ctrl" kind="fft_ctrl" version="1.0" enabled="1">
+  <parameter name="BUSWIDTH" value="32" />
+  <parameter name="DWIDTH" value="14" />
+  <parameter name="FFTPTS_WIDTH" value="11" />
+  <parameter name="FFT_INWIDTH" value="18" />
+  <parameter name="FFT_OUTWIDTH" value="29" />
+  <parameter name="RAM_ADDR_WIDTH" value="10" />
+  <parameter name="RAM_DATA_WIDTH" value="64" />
+ </module>
  <module
    name="fifo_clk_bridge"
    kind="altera_clock_bridge"
-   version="17.1"
+   version="18.1"
    enabled="1">
   <parameter name="DERIVED_CLOCK_RATE" value="0" />
   <parameter name="EXPLICIT_CLOCK_RATE" value="0" />
@@ -1863,7 +1928,7 @@
  <module
    name="fifo_dummy"
    kind="altera_avalon_fifo"
-   version="17.1"
+   version="18.1"
    enabled="0">
   <parameter name="avalonMMAvalonMMDataWidth" value="32" />
   <parameter name="avalonMMAvalonSTDataWidth" value="32" />
@@ -1888,7 +1953,7 @@
  <module
    name="fifo_dummy64_in"
    kind="altera_avalon_fifo"
-   version="17.1"
+   version="18.1"
    enabled="0">
   <parameter name="avalonMMAvalonMMDataWidth" value="64" />
   <parameter name="avalonMMAvalonSTDataWidth" value="32" />
@@ -1913,7 +1978,7 @@
  <module
    name="fifo_dummy64_out"
    kind="altera_avalon_fifo"
-   version="17.1"
+   version="18.1"
    enabled="0">
   <parameter name="avalonMMAvalonMMDataWidth" value="64" />
   <parameter name="avalonMMAvalonSTDataWidth" value="32" />
@@ -1935,14 +2000,14 @@
   <parameter name="useRegister" value="false" />
   <parameter name="useWriteControl" value="true" />
  </module>
- <module name="fifo_rst" kind="altera_reset_bridge" version="17.1" enabled="1">
+ <module name="fifo_rst" kind="altera_reset_bridge" version="18.1" enabled="1">
   <parameter name="ACTIVE_LOW_RESET" value="0" />
   <parameter name="AUTO_CLK_CLOCK_RATE" value="0" />
   <parameter name="NUM_RESET_OUTPUTS" value="1" />
   <parameter name="SYNCHRONOUS_EDGES" value="deassert" />
   <parameter name="USE_RESET_REQUEST" value="0" />
  </module>
- <module name="gp_pll" kind="altera_pll" version="17.1" enabled="1">
+ <module name="gp_pll" kind="altera_pll" version="18.1" enabled="1">
   <parameter name="debug_print_output" value="false" />
   <parameter name="debug_use_rbc_taf_method" value="false" />
   <parameter name="device" value="5CSEMA5F31C6" />
@@ -2145,7 +2210,7 @@
   <parameter name="gui_switchover_mode">Automatic Switchover</parameter>
   <parameter name="gui_use_locked" value="true" />
  </module>
- <module name="hps_0" kind="altera_hps" version="17.1" enabled="1">
+ <module name="hps_0" kind="altera_hps" version="18.1" enabled="1">
   <parameter name="ABSTRACT_REAL_COMPARE_TEST" value="false" />
   <parameter name="ABS_RAM_MEM_INIT_FILENAME" value="meminit" />
   <parameter name="ACV_PHY_CLK_ADD_FR_PHASE" value="0.0" />
@@ -2675,7 +2740,7 @@
   <parameter name="usb_mp_clk_div" value="0" />
   <parameter name="use_default_mpu_clk" value="true" />
  </module>
- <module name="hs_spi" kind="altera_avalon_spi" version="17.1" enabled="1">
+ <module name="hs_spi" kind="altera_avalon_spi" version="18.1" enabled="1">
   <parameter name="avalonSpec" value="2.0" />
   <parameter name="clockPhase" value="0" />
   <parameter name="clockPolarity" value="0" />
@@ -2691,12 +2756,12 @@
   <parameter name="targetClockRate" value="128000" />
   <parameter name="targetSlaveSelectToSClkDelay" value="0.0" />
  </module>
- <module name="i2c_ext" kind="altera_avalon_i2c" version="17.1" enabled="0">
+ <module name="i2c_ext" kind="altera_avalon_i2c" version="18.1" enabled="0">
   <parameter name="FIFO_DEPTH" value="32" />
   <parameter name="USE_AV_ST" value="0" />
   <parameter name="clockRate" value="50000000" />
  </module>
- <module name="i2c_int" kind="altera_avalon_i2c" version="17.1" enabled="1">
+ <module name="i2c_int" kind="altera_avalon_i2c" version="18.1" enabled="1">
   <parameter name="FIFO_DEPTH" value="32" />
   <parameter name="USE_AV_ST" value="0" />
   <parameter name="clockRate" value="50000000" />
@@ -2704,7 +2769,7 @@
  <module
    name="jtag_uart"
    kind="altera_avalon_jtag_uart"
-   version="17.1"
+   version="18.1"
    enabled="1">
   <parameter name="allowMultipleConnections" value="true" />
   <parameter name="avalonSpec" value="2.0" />
@@ -2723,7 +2788,7 @@
  <module
    name="master_non_sec"
    kind="altera_jtag_avalon_master"
-   version="17.1"
+   version="18.1"
    enabled="1">
   <parameter name="AUTO_DEVICE" value="5CSEMA5F31C6" />
   <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone V" />
@@ -2737,7 +2802,7 @@
  <module
    name="master_secure"
    kind="altera_jtag_avalon_master"
-   version="17.1"
+   version="18.1"
    enabled="1">
   <parameter name="AUTO_DEVICE" value="5CSEMA5F31C6" />
   <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone V" />
@@ -2812,7 +2877,7 @@
   <parameter name="AUTO_SAMPLES_PER_ECHO_CLK_RESET_DOMAIN" value="6" />
   <parameter name="AUTO_UNIQUE_ID">$${FILENAME}_nmr_parameters</parameter>
  </module>
- <module name="nmr_sys_pll" kind="altera_pll" version="17.1" enabled="1">
+ <module name="nmr_sys_pll" kind="altera_pll" version="18.1" enabled="1">
   <parameter name="debug_print_output" value="false" />
   <parameter name="debug_use_rbc_taf_method" value="false" />
   <parameter name="device" value="5CSEMA5F31C6" />
@@ -3018,7 +3083,7 @@
  <module
    name="nmr_sys_pll_reconfig"
    kind="altera_pll_reconfig"
-   version="17.1"
+   version="18.1"
    enabled="1">
   <parameter name="ENABLE_BYTEENABLE" value="false" />
   <parameter name="ENABLE_MIF" value="false" />
@@ -3028,7 +3093,7 @@
  <module
    name="sdram"
    kind="altera_avalon_new_sdram_controller"
-   version="17.1"
+   version="18.1"
    enabled="1">
   <parameter name="TAC" value="5.4" />
   <parameter name="TMRD" value="3" />
@@ -3057,7 +3122,7 @@
  <module
    name="spi_afe_relays"
    kind="altera_avalon_spi"
-   version="17.1"
+   version="18.1"
    enabled="1">
   <parameter name="avalonSpec" value="2.0" />
   <parameter name="clockPhase" value="0" />
@@ -3077,7 +3142,7 @@
  <module
    name="spi_mtch_ntwrk"
    kind="altera_avalon_spi"
-   version="17.1"
+   version="18.1"
    enabled="1">
   <parameter name="avalonSpec" value="2.0" />
   <parameter name="clockPhase" value="0" />
@@ -3094,7 +3159,7 @@
   <parameter name="targetClockRate" value="128000" />
   <parameter name="targetSlaveSelectToSClkDelay" value="0.0" />
  </module>
- <module name="switches" kind="altera_avalon_pio" version="17.1" enabled="1">
+ <module name="switches" kind="altera_avalon_pio" version="18.1" enabled="1">
   <parameter name="bitClearingEdgeCapReg" value="false" />
   <parameter name="bitModifyingOutReg" value="false" />
   <parameter name="captureEdge" value="false" />
@@ -3111,13 +3176,13 @@
  <module
    name="sysid_qsys"
    kind="altera_avalon_sysid_qsys"
-   version="17.1"
+   version="18.1"
    enabled="1">
   <parameter name="id" value="-1395322110" />
  </module>
  <connection
    kind="avalon"
-   version="17.1"
+   version="18.1"
    start="alt_vip_vfr_vga.avalon_master"
    end="hps_0.f2h_axi_slave">
   <parameter name="arbitrationPriority" value="1" />
@@ -3126,7 +3191,7 @@
  </connection>
  <connection
    kind="avalon"
-   version="17.1"
+   version="18.1"
    start="hps_0.h2f_axi_master"
    end="fifo_dummy64_in.in">
   <parameter name="arbitrationPriority" value="1" />
@@ -3135,7 +3200,7 @@
  </connection>
  <connection
    kind="avalon"
-   version="17.1"
+   version="18.1"
    start="hps_0.h2f_axi_master"
    end="fifo_dummy.in">
   <parameter name="arbitrationPriority" value="1" />
@@ -3144,7 +3209,7 @@
  </connection>
  <connection
    kind="avalon"
-   version="17.1"
+   version="18.1"
    start="hps_0.h2f_axi_master"
    end="fifo_dummy64_in.in_csr">
   <parameter name="arbitrationPriority" value="1" />
@@ -3153,7 +3218,7 @@
  </connection>
  <connection
    kind="avalon"
-   version="17.1"
+   version="18.1"
    start="hps_0.h2f_axi_master"
    end="fifo_dummy64_out.in_csr">
   <parameter name="arbitrationPriority" value="1" />
@@ -3162,7 +3227,7 @@
  </connection>
  <connection
    kind="avalon"
-   version="17.1"
+   version="18.1"
    start="hps_0.h2f_axi_master"
    end="fifo_dummy.in_csr">
   <parameter name="arbitrationPriority" value="1" />
@@ -3171,7 +3236,7 @@
  </connection>
  <connection
    kind="avalon"
-   version="17.1"
+   version="18.1"
    start="hps_0.h2f_axi_master"
    end="fifo_dummy64_out.out">
   <parameter name="arbitrationPriority" value="1" />
@@ -3180,7 +3245,7 @@
  </connection>
  <connection
    kind="avalon"
-   version="17.1"
+   version="18.1"
    start="hps_0.h2f_axi_master"
    end="fifo_dummy.out">
   <parameter name="arbitrationPriority" value="1" />
@@ -3189,7 +3254,16 @@
  </connection>
  <connection
    kind="avalon"
-   version="17.1"
+   version="18.1"
+   start="hps_0.h2f_axi_master"
+   end="fft_ctrl.s0">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x04002000" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="18.1"
    start="hps_0.h2f_axi_master"
    end="switches.s1">
   <parameter name="arbitrationPriority" value="1" />
@@ -3198,7 +3272,7 @@
  </connection>
  <connection
    kind="avalon"
-   version="17.1"
+   version="18.1"
    start="hps_0.h2f_axi_master"
    end="sdram.s1">
   <parameter name="arbitrationPriority" value="1" />
@@ -3207,7 +3281,7 @@
  </connection>
  <connection
    kind="avalon"
-   version="17.1"
+   version="18.1"
    start="hps_0.h2f_lw_axi_master"
    end="nmr_parameters.adc_val_sub_s1">
   <parameter name="arbitrationPriority" value="1" />
@@ -3216,7 +3290,7 @@
  </connection>
  <connection
    kind="avalon"
-   version="17.1"
+   version="18.1"
    start="hps_0.h2f_lw_axi_master"
    end="jtag_uart.avalon_jtag_slave">
   <parameter name="arbitrationPriority" value="1" />
@@ -3225,7 +3299,7 @@
  </connection>
  <connection
    kind="avalon"
-   version="17.1"
+   version="18.1"
    start="hps_0.h2f_lw_axi_master"
    end="dconv_fir_q.avalon_mm_slave">
   <parameter name="arbitrationPriority" value="1" />
@@ -3234,7 +3308,7 @@
  </connection>
  <connection
    kind="avalon"
-   version="17.1"
+   version="18.1"
    start="hps_0.h2f_lw_axi_master"
    end="dconv_fir.avalon_mm_slave">
   <parameter name="arbitrationPriority" value="1" />
@@ -3243,7 +3317,7 @@
  </connection>
  <connection
    kind="avalon"
-   version="17.1"
+   version="18.1"
    start="hps_0.h2f_lw_axi_master"
    end="alt_vip_vfr_vga.avalon_slave">
   <parameter name="arbitrationPriority" value="1" />
@@ -3252,7 +3326,7 @@
  </connection>
  <connection
    kind="avalon"
-   version="17.1"
+   version="18.1"
    start="hps_0.h2f_lw_axi_master"
    end="dma_fifo.control_port_slave">
   <parameter name="arbitrationPriority" value="1" />
@@ -3261,7 +3335,7 @@
  </connection>
  <connection
    kind="avalon"
-   version="17.1"
+   version="18.1"
    start="hps_0.h2f_lw_axi_master"
    end="dma_dconvi.control_port_slave">
   <parameter name="arbitrationPriority" value="1" />
@@ -3270,7 +3344,7 @@
  </connection>
  <connection
    kind="avalon"
-   version="17.1"
+   version="18.1"
    start="hps_0.h2f_lw_axi_master"
    end="dma_dummy.control_port_slave">
   <parameter name="arbitrationPriority" value="1" />
@@ -3279,7 +3353,7 @@
  </connection>
  <connection
    kind="avalon"
-   version="17.1"
+   version="18.1"
    start="hps_0.h2f_lw_axi_master"
    end="sysid_qsys.control_slave">
   <parameter name="arbitrationPriority" value="1" />
@@ -3288,7 +3362,7 @@
  </connection>
  <connection
    kind="avalon"
-   version="17.1"
+   version="18.1"
    start="hps_0.h2f_lw_axi_master"
    end="i2c_int.csr">
   <parameter name="arbitrationPriority" value="1" />
@@ -3297,7 +3371,7 @@
  </connection>
  <connection
    kind="avalon"
-   version="17.1"
+   version="18.1"
    start="hps_0.h2f_lw_axi_master"
    end="i2c_ext.csr">
   <parameter name="arbitrationPriority" value="1" />
@@ -3306,7 +3380,7 @@
  </connection>
  <connection
    kind="avalon"
-   version="17.1"
+   version="18.1"
    start="hps_0.h2f_lw_axi_master"
    end="nmr_parameters.dec_fact_s1">
   <parameter name="arbitrationPriority" value="1" />
@@ -3315,7 +3389,7 @@
  </connection>
  <connection
    kind="avalon"
-   version="17.1"
+   version="18.1"
    start="hps_0.h2f_lw_axi_master"
    end="nmr_parameters.delay_nosig_s1">
   <parameter name="arbitrationPriority" value="1" />
@@ -3324,7 +3398,7 @@
  </connection>
  <connection
    kind="avalon"
-   version="17.1"
+   version="18.1"
    start="hps_0.h2f_lw_axi_master"
    end="nmr_parameters.delay_sig_s1">
   <parameter name="arbitrationPriority" value="1" />
@@ -3333,7 +3407,7 @@
  </connection>
  <connection
    kind="avalon"
-   version="17.1"
+   version="18.1"
    start="hps_0.h2f_lw_axi_master"
    end="nmr_parameters.delay_t1_s1">
   <parameter name="arbitrationPriority" value="1" />
@@ -3342,16 +3416,16 @@
  </connection>
  <connection
    kind="avalon"
-   version="17.1"
+   version="18.1"
    start="hps_0.h2f_lw_axi_master"
    end="nmr_parameters.echo_skip_s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0620" />
+  <parameter name="baseAddress" value="0x0630" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
    kind="avalon"
-   version="17.1"
+   version="18.1"
    start="hps_0.h2f_lw_axi_master"
    end="nmr_parameters.echoes_per_scan_s1">
   <parameter name="arbitrationPriority" value="1" />
@@ -3360,7 +3434,7 @@
  </connection>
  <connection
    kind="avalon"
-   version="17.1"
+   version="18.1"
    start="hps_0.h2f_lw_axi_master"
    end="adc_fifo_mem.in_csr">
   <parameter name="arbitrationPriority" value="1" />
@@ -3369,7 +3443,7 @@
  </connection>
  <connection
    kind="avalon"
-   version="17.1"
+   version="18.1"
    start="hps_0.h2f_lw_axi_master"
    end="dconv_fifo_mem.in_csr">
   <parameter name="arbitrationPriority" value="1" />
@@ -3378,7 +3452,7 @@
  </connection>
  <connection
    kind="avalon"
-   version="17.1"
+   version="18.1"
    start="hps_0.h2f_lw_axi_master"
    end="nmr_parameters.init_delay_s1">
   <parameter name="arbitrationPriority" value="1" />
@@ -3387,7 +3461,7 @@
  </connection>
  <connection
    kind="avalon"
-   version="17.1"
+   version="18.1"
    start="hps_0.h2f_lw_axi_master"
    end="nmr_sys_pll_reconfig.mgmt_avalon_slave">
   <parameter name="arbitrationPriority" value="1" />
@@ -3396,7 +3470,7 @@
  </connection>
  <connection
    kind="avalon"
-   version="17.1"
+   version="18.1"
    start="hps_0.h2f_lw_axi_master"
    end="analyzer_pll_reconfig.mgmt_avalon_slave">
   <parameter name="arbitrationPriority" value="1" />
@@ -3405,61 +3479,61 @@
  </connection>
  <connection
    kind="avalon"
-   version="17.1"
+   version="18.1"
    start="hps_0.h2f_lw_axi_master"
    end="nmr_parameters.mgnt_chg_dlen_s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0620" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="18.1"
+   start="hps_0.h2f_lw_axi_master"
+   end="nmr_parameters.mgnt_chg_plen_s1">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x0600" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
    kind="avalon"
-   version="17.1"
+   version="18.1"
    start="hps_0.h2f_lw_axi_master"
-   end="nmr_parameters.mgnt_chg_plen_s1">
+   end="nmr_parameters.mgnt_d_s1">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x04f0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
    kind="avalon"
-   version="17.1"
+   version="18.1"
    start="hps_0.h2f_lw_axi_master"
-   end="nmr_parameters.mgnt_d_s1">
+   end="nmr_parameters.mgnt_dchg_dlen_s1">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x04e0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
    kind="avalon"
-   version="17.1"
+   version="18.1"
    start="hps_0.h2f_lw_axi_master"
-   end="nmr_parameters.mgnt_dchg_dlen_s1">
+   end="nmr_parameters.mgnt_dchg_plen_s1">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x0450" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
    kind="avalon"
-   version="17.1"
+   version="18.1"
    start="hps_0.h2f_lw_axi_master"
-   end="nmr_parameters.mgnt_dchg_plen_s1">
+   end="nmr_parameters.mgnt_n_s1">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x0070" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
    kind="avalon"
-   version="17.1"
-   start="hps_0.h2f_lw_axi_master"
-   end="nmr_parameters.mgnt_n_s1">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0060" />
-  <parameter name="defaultConnection" value="false" />
- </connection>
- <connection
-   kind="avalon"
-   version="17.1"
+   version="18.1"
    start="hps_0.h2f_lw_axi_master"
    end="adc_fifo_mem.out">
   <parameter name="arbitrationPriority" value="1" />
@@ -3468,7 +3542,7 @@
  </connection>
  <connection
    kind="avalon"
-   version="17.1"
+   version="18.1"
    start="hps_0.h2f_lw_axi_master"
    end="dconv_fifo_mem.out">
   <parameter name="arbitrationPriority" value="1" />
@@ -3477,7 +3551,7 @@
  </connection>
  <connection
    kind="avalon"
-   version="17.1"
+   version="18.1"
    start="hps_0.h2f_lw_axi_master"
    end="nmr_parameters.pulse_180deg_s1">
   <parameter name="arbitrationPriority" value="1" />
@@ -3486,7 +3560,7 @@
  </connection>
  <connection
    kind="avalon"
-   version="17.1"
+   version="18.1"
    start="hps_0.h2f_lw_axi_master"
    end="nmr_parameters.pulse_90deg_s1">
   <parameter name="arbitrationPriority" value="1" />
@@ -3495,7 +3569,7 @@
  </connection>
  <connection
    kind="avalon"
-   version="17.1"
+   version="18.1"
    start="hps_0.h2f_lw_axi_master"
    end="nmr_parameters.pulse_t1_s1">
   <parameter name="arbitrationPriority" value="1" />
@@ -3504,7 +3578,7 @@
  </connection>
  <connection
    kind="avalon"
-   version="17.1"
+   version="18.1"
    start="hps_0.h2f_lw_axi_master"
    end="nmr_parameters.rx_delay_s1">
   <parameter name="arbitrationPriority" value="1" />
@@ -3513,7 +3587,7 @@
  </connection>
  <connection
    kind="avalon"
-   version="17.1"
+   version="18.1"
    start="hps_0.h2f_lw_axi_master"
    end="ctrl_out.s1">
   <parameter name="arbitrationPriority" value="1" />
@@ -3522,7 +3596,7 @@
  </connection>
  <connection
    kind="avalon"
-   version="17.1"
+   version="18.1"
    start="hps_0.h2f_lw_axi_master"
    end="ctrl_in.s1">
   <parameter name="arbitrationPriority" value="1" />
@@ -3531,7 +3605,7 @@
  </connection>
  <connection
    kind="avalon"
-   version="17.1"
+   version="18.1"
    start="hps_0.h2f_lw_axi_master"
    end="aux_cnt_out.s1">
   <parameter name="arbitrationPriority" value="1" />
@@ -3540,7 +3614,16 @@
  </connection>
  <connection
    kind="avalon"
-   version="17.1"
+   version="18.1"
+   start="hps_0.h2f_lw_axi_master"
+   end="ffpts.s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0060" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="18.1"
    start="hps_0.h2f_lw_axi_master"
    end="nmr_parameters.samples_per_echo_s1">
   <parameter name="arbitrationPriority" value="1" />
@@ -3549,7 +3632,7 @@
  </connection>
  <connection
    kind="avalon"
-   version="17.1"
+   version="18.1"
    start="hps_0.h2f_lw_axi_master"
    end="dac_grad.spi_control_port">
   <parameter name="arbitrationPriority" value="1" />
@@ -3558,7 +3641,7 @@
  </connection>
  <connection
    kind="avalon"
-   version="17.1"
+   version="18.1"
    start="hps_0.h2f_lw_axi_master"
    end="spi_mtch_ntwrk.spi_control_port">
   <parameter name="arbitrationPriority" value="1" />
@@ -3567,7 +3650,7 @@
  </connection>
  <connection
    kind="avalon"
-   version="17.1"
+   version="18.1"
    start="hps_0.h2f_lw_axi_master"
    end="spi_afe_relays.spi_control_port">
   <parameter name="arbitrationPriority" value="1" />
@@ -3576,7 +3659,7 @@
  </connection>
  <connection
    kind="avalon"
-   version="17.1"
+   version="18.1"
    start="hps_0.h2f_lw_axi_master"
    end="dac_preamp.spi_control_port">
   <parameter name="arbitrationPriority" value="1" />
@@ -3585,7 +3668,7 @@
  </connection>
  <connection
    kind="avalon"
-   version="17.1"
+   version="18.1"
    start="hps_0.h2f_lw_axi_master"
    end="hs_spi.spi_control_port">
   <parameter name="arbitrationPriority" value="1" />
@@ -3594,7 +3677,7 @@
  </connection>
  <connection
    kind="avalon"
-   version="17.1"
+   version="18.1"
    start="master_non_sec.master"
    end="nmr_parameters.adc_val_sub_s1">
   <parameter name="arbitrationPriority" value="1" />
@@ -3603,7 +3686,7 @@
  </connection>
  <connection
    kind="avalon"
-   version="17.1"
+   version="18.1"
    start="master_non_sec.master"
    end="jtag_uart.avalon_jtag_slave">
   <parameter name="arbitrationPriority" value="1" />
@@ -3612,7 +3695,7 @@
  </connection>
  <connection
    kind="avalon"
-   version="17.1"
+   version="18.1"
    start="master_non_sec.master"
    end="dconv_fir_q.avalon_mm_slave">
   <parameter name="arbitrationPriority" value="1" />
@@ -3621,7 +3704,7 @@
  </connection>
  <connection
    kind="avalon"
-   version="17.1"
+   version="18.1"
    start="master_non_sec.master"
    end="dconv_fir.avalon_mm_slave">
   <parameter name="arbitrationPriority" value="1" />
@@ -3630,7 +3713,7 @@
  </connection>
  <connection
    kind="avalon"
-   version="17.1"
+   version="18.1"
    start="master_non_sec.master"
    end="alt_vip_vfr_vga.avalon_slave">
   <parameter name="arbitrationPriority" value="1" />
@@ -3639,7 +3722,7 @@
  </connection>
  <connection
    kind="avalon"
-   version="17.1"
+   version="18.1"
    start="master_non_sec.master"
    end="sysid_qsys.control_slave">
   <parameter name="arbitrationPriority" value="1" />
@@ -3648,7 +3731,7 @@
  </connection>
  <connection
    kind="avalon"
-   version="17.1"
+   version="18.1"
    start="master_non_sec.master"
    end="i2c_int.csr">
   <parameter name="arbitrationPriority" value="1" />
@@ -3657,7 +3740,7 @@
  </connection>
  <connection
    kind="avalon"
-   version="17.1"
+   version="18.1"
    start="master_non_sec.master"
    end="i2c_ext.csr">
   <parameter name="arbitrationPriority" value="1" />
@@ -3666,7 +3749,7 @@
  </connection>
  <connection
    kind="avalon"
-   version="17.1"
+   version="18.1"
    start="master_non_sec.master"
    end="nmr_parameters.dec_fact_s1">
   <parameter name="arbitrationPriority" value="1" />
@@ -3675,7 +3758,7 @@
  </connection>
  <connection
    kind="avalon"
-   version="17.1"
+   version="18.1"
    start="master_non_sec.master"
    end="nmr_parameters.delay_nosig_s1">
   <parameter name="arbitrationPriority" value="1" />
@@ -3684,7 +3767,7 @@
  </connection>
  <connection
    kind="avalon"
-   version="17.1"
+   version="18.1"
    start="master_non_sec.master"
    end="nmr_parameters.delay_sig_s1">
   <parameter name="arbitrationPriority" value="1" />
@@ -3693,7 +3776,7 @@
  </connection>
  <connection
    kind="avalon"
-   version="17.1"
+   version="18.1"
    start="master_non_sec.master"
    end="nmr_parameters.delay_t1_s1">
   <parameter name="arbitrationPriority" value="1" />
@@ -3702,16 +3785,16 @@
  </connection>
  <connection
    kind="avalon"
-   version="17.1"
+   version="18.1"
    start="master_non_sec.master"
    end="nmr_parameters.echo_skip_s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0620" />
+  <parameter name="baseAddress" value="0x0630" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
    kind="avalon"
-   version="17.1"
+   version="18.1"
    start="master_non_sec.master"
    end="nmr_parameters.echoes_per_scan_s1">
   <parameter name="arbitrationPriority" value="1" />
@@ -3720,7 +3803,7 @@
  </connection>
  <connection
    kind="avalon"
-   version="17.1"
+   version="18.1"
    start="master_secure.master"
    end="hps_0.f2h_axi_slave">
   <parameter name="arbitrationPriority" value="1" />
@@ -3729,7 +3812,7 @@
  </connection>
  <connection
    kind="avalon"
-   version="17.1"
+   version="18.1"
    start="master_non_sec.master"
    end="adc_fifo_mem.in_csr">
   <parameter name="arbitrationPriority" value="1" />
@@ -3738,7 +3821,7 @@
  </connection>
  <connection
    kind="avalon"
-   version="17.1"
+   version="18.1"
    start="master_non_sec.master"
    end="dconv_fifo_mem.in_csr">
   <parameter name="arbitrationPriority" value="1" />
@@ -3747,7 +3830,7 @@
  </connection>
  <connection
    kind="avalon"
-   version="17.1"
+   version="18.1"
    start="master_non_sec.master"
    end="nmr_parameters.init_delay_s1">
   <parameter name="arbitrationPriority" value="1" />
@@ -3756,7 +3839,7 @@
  </connection>
  <connection
    kind="avalon"
-   version="17.1"
+   version="18.1"
    start="master_non_sec.master"
    end="nmr_sys_pll_reconfig.mgmt_avalon_slave">
   <parameter name="arbitrationPriority" value="1" />
@@ -3765,7 +3848,7 @@
  </connection>
  <connection
    kind="avalon"
-   version="17.1"
+   version="18.1"
    start="master_non_sec.master"
    end="analyzer_pll_reconfig.mgmt_avalon_slave">
   <parameter name="arbitrationPriority" value="1" />
@@ -3774,61 +3857,61 @@
  </connection>
  <connection
    kind="avalon"
-   version="17.1"
+   version="18.1"
    start="master_non_sec.master"
    end="nmr_parameters.mgnt_chg_dlen_s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0620" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="18.1"
+   start="master_non_sec.master"
+   end="nmr_parameters.mgnt_chg_plen_s1">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x0600" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
    kind="avalon"
-   version="17.1"
+   version="18.1"
    start="master_non_sec.master"
-   end="nmr_parameters.mgnt_chg_plen_s1">
+   end="nmr_parameters.mgnt_d_s1">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x04f0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
    kind="avalon"
-   version="17.1"
+   version="18.1"
    start="master_non_sec.master"
-   end="nmr_parameters.mgnt_d_s1">
+   end="nmr_parameters.mgnt_dchg_dlen_s1">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x04e0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
    kind="avalon"
-   version="17.1"
+   version="18.1"
    start="master_non_sec.master"
-   end="nmr_parameters.mgnt_dchg_dlen_s1">
+   end="nmr_parameters.mgnt_dchg_plen_s1">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x0450" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
    kind="avalon"
-   version="17.1"
+   version="18.1"
    start="master_non_sec.master"
-   end="nmr_parameters.mgnt_dchg_plen_s1">
+   end="nmr_parameters.mgnt_n_s1">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x0070" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
    kind="avalon"
-   version="17.1"
-   start="master_non_sec.master"
-   end="nmr_parameters.mgnt_n_s1">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0060" />
-  <parameter name="defaultConnection" value="false" />
- </connection>
- <connection
-   kind="avalon"
-   version="17.1"
+   version="18.1"
    start="master_non_sec.master"
    end="adc_fifo_mem.out">
   <parameter name="arbitrationPriority" value="1" />
@@ -3837,7 +3920,7 @@
  </connection>
  <connection
    kind="avalon"
-   version="17.1"
+   version="18.1"
    start="master_non_sec.master"
    end="dconv_fifo_mem.out">
   <parameter name="arbitrationPriority" value="1" />
@@ -3846,7 +3929,7 @@
  </connection>
  <connection
    kind="avalon"
-   version="17.1"
+   version="18.1"
    start="master_non_sec.master"
    end="nmr_parameters.pulse_180deg_s1">
   <parameter name="arbitrationPriority" value="1" />
@@ -3855,7 +3938,7 @@
  </connection>
  <connection
    kind="avalon"
-   version="17.1"
+   version="18.1"
    start="master_non_sec.master"
    end="nmr_parameters.pulse_90deg_s1">
   <parameter name="arbitrationPriority" value="1" />
@@ -3864,7 +3947,7 @@
  </connection>
  <connection
    kind="avalon"
-   version="17.1"
+   version="18.1"
    start="master_non_sec.master"
    end="nmr_parameters.pulse_t1_s1">
   <parameter name="arbitrationPriority" value="1" />
@@ -3873,7 +3956,7 @@
  </connection>
  <connection
    kind="avalon"
-   version="17.1"
+   version="18.1"
    start="master_non_sec.master"
    end="nmr_parameters.rx_delay_s1">
   <parameter name="arbitrationPriority" value="1" />
@@ -3882,7 +3965,7 @@
  </connection>
  <connection
    kind="avalon"
-   version="17.1"
+   version="18.1"
    start="master_non_sec.master"
    end="ctrl_out.s1">
   <parameter name="arbitrationPriority" value="1" />
@@ -3891,7 +3974,7 @@
  </connection>
  <connection
    kind="avalon"
-   version="17.1"
+   version="18.1"
    start="master_non_sec.master"
    end="ctrl_in.s1">
   <parameter name="arbitrationPriority" value="1" />
@@ -3900,7 +3983,7 @@
  </connection>
  <connection
    kind="avalon"
-   version="17.1"
+   version="18.1"
    start="master_non_sec.master"
    end="aux_cnt_out.s1">
   <parameter name="arbitrationPriority" value="1" />
@@ -3909,7 +3992,7 @@
  </connection>
  <connection
    kind="avalon"
-   version="17.1"
+   version="18.1"
    start="master_non_sec.master"
    end="nmr_parameters.samples_per_echo_s1">
   <parameter name="arbitrationPriority" value="1" />
@@ -3918,7 +4001,7 @@
  </connection>
  <connection
    kind="avalon"
-   version="17.1"
+   version="18.1"
    start="master_non_sec.master"
    end="dac_grad.spi_control_port">
   <parameter name="arbitrationPriority" value="1" />
@@ -3927,7 +4010,7 @@
  </connection>
  <connection
    kind="avalon"
-   version="17.1"
+   version="18.1"
    start="master_non_sec.master"
    end="spi_mtch_ntwrk.spi_control_port">
   <parameter name="arbitrationPriority" value="1" />
@@ -3936,7 +4019,7 @@
  </connection>
  <connection
    kind="avalon"
-   version="17.1"
+   version="18.1"
    start="master_non_sec.master"
    end="spi_afe_relays.spi_control_port">
   <parameter name="arbitrationPriority" value="1" />
@@ -3945,7 +4028,7 @@
  </connection>
  <connection
    kind="avalon"
-   version="17.1"
+   version="18.1"
    start="master_non_sec.master"
    end="dac_preamp.spi_control_port">
   <parameter name="arbitrationPriority" value="1" />
@@ -3954,7 +4037,7 @@
  </connection>
  <connection
    kind="avalon"
-   version="17.1"
+   version="18.1"
    start="dma_fifo.read_master"
    end="adc_fifo_mem.out">
   <parameter name="arbitrationPriority" value="1" />
@@ -3963,7 +4046,7 @@
  </connection>
  <connection
    kind="avalon"
-   version="17.1"
+   version="18.1"
    start="dma_dummy.read_master"
    end="fifo_dummy64_out.out">
   <parameter name="arbitrationPriority" value="1" />
@@ -3972,7 +4055,7 @@
  </connection>
  <connection
    kind="avalon"
-   version="17.1"
+   version="18.1"
    start="dma_dconvi.read_master"
    end="dconv_fifo_mem.out">
   <parameter name="arbitrationPriority" value="1" />
@@ -3981,7 +4064,7 @@
  </connection>
  <connection
    kind="avalon"
-   version="17.1"
+   version="18.1"
    start="dma_fifo.read_master"
    end="switches.s1">
   <parameter name="arbitrationPriority" value="1" />
@@ -3990,7 +4073,7 @@
  </connection>
  <connection
    kind="avalon"
-   version="17.1"
+   version="18.1"
    start="dma_fifo.write_master"
    end="sdram.s1">
   <parameter name="arbitrationPriority" value="1" />
@@ -3999,7 +4082,7 @@
  </connection>
  <connection
    kind="avalon"
-   version="17.1"
+   version="18.1"
    start="dma_dconvi.write_master"
    end="sdram.s1">
   <parameter name="arbitrationPriority" value="1" />
@@ -4008,7 +4091,7 @@
  </connection>
  <connection
    kind="avalon"
-   version="17.1"
+   version="18.1"
    start="dma_dummy.write_master"
    end="sdram.s1">
   <parameter name="arbitrationPriority" value="1" />
@@ -4017,270 +4100,277 @@
  </connection>
  <connection
    kind="avalon_streaming"
-   version="17.1"
+   version="18.1"
    start="alt_vip_vfr_vga.avalon_streaming_source"
    end="alt_vip_itc_0.din" />
  <connection
    kind="avalon_streaming"
-   version="17.1"
+   version="18.1"
    start="adc_fifo_dc.out"
    end="adc_fifo_mem.in" />
  <connection
    kind="avalon_streaming"
-   version="17.1"
+   version="18.1"
    start="fifo_dummy64_in.out"
    end="fifo_dummy64_out.in" />
  <connection
    kind="avalon_streaming"
-   version="17.1"
+   version="18.1"
    start="dconv_fifo_dc.out"
    end="dconv_fifo_mem.in" />
  <connection
    kind="clock"
-   version="17.1"
+   version="18.1"
    start="clk_0.clk"
    end="nmr_parameters.adc_val_sub_clk" />
- <connection kind="clock" version="17.1" start="clk_0.clk" end="master_secure.clk" />
- <connection kind="clock" version="17.1" start="clk_0.clk" end="sysid_qsys.clk" />
- <connection kind="clock" version="17.1" start="clk_0.clk" end="jtag_uart.clk" />
- <connection kind="clock" version="17.1" start="clk_0.clk" end="ctrl_out.clk" />
- <connection kind="clock" version="17.1" start="clk_0.clk" end="dac_grad.clk" />
- <connection kind="clock" version="17.1" start="clk_0.clk" end="ctrl_in.clk" />
+ <connection kind="clock" version="18.1" start="clk_0.clk" end="master_secure.clk" />
+ <connection kind="clock" version="18.1" start="clk_0.clk" end="sysid_qsys.clk" />
+ <connection kind="clock" version="18.1" start="clk_0.clk" end="jtag_uart.clk" />
+ <connection kind="clock" version="18.1" start="clk_0.clk" end="ctrl_out.clk" />
+ <connection kind="clock" version="18.1" start="clk_0.clk" end="dac_grad.clk" />
+ <connection kind="clock" version="18.1" start="clk_0.clk" end="ctrl_in.clk" />
  <connection
    kind="clock"
-   version="17.1"
+   version="18.1"
    start="clk_0.clk"
    end="master_non_sec.clk" />
- <connection kind="clock" version="17.1" start="clk_0.clk" end="dma_fifo.clk" />
- <connection kind="clock" version="17.1" start="clk_0.clk" end="switches.clk" />
- <connection kind="clock" version="17.1" start="clk_0.clk" end="sdram.clk" />
- <connection kind="clock" version="17.1" start="clk_0.clk" end="aux_cnt_out.clk" />
+ <connection kind="clock" version="18.1" start="clk_0.clk" end="dma_fifo.clk" />
+ <connection kind="clock" version="18.1" start="clk_0.clk" end="switches.clk" />
+ <connection kind="clock" version="18.1" start="clk_0.clk" end="sdram.clk" />
+ <connection kind="clock" version="18.1" start="clk_0.clk" end="aux_cnt_out.clk" />
  <connection
    kind="clock"
-   version="17.1"
+   version="18.1"
    start="clk_0.clk"
    end="spi_mtch_ntwrk.clk" />
- <connection kind="clock" version="17.1" start="clk_0.clk" end="dma_dconvi.clk" />
- <connection kind="clock" version="17.1" start="clk_0.clk" end="dma_dummy.clk" />
+ <connection kind="clock" version="18.1" start="clk_0.clk" end="dma_dconvi.clk" />
+ <connection kind="clock" version="18.1" start="clk_0.clk" end="dma_dummy.clk" />
  <connection
    kind="clock"
-   version="17.1"
+   version="18.1"
    start="clk_0.clk"
    end="spi_afe_relays.clk" />
- <connection kind="clock" version="17.1" start="clk_0.clk" end="dac_preamp.clk" />
- <connection kind="clock" version="17.1" start="clk_0.clk" end="hs_spi.clk" />
+ <connection kind="clock" version="18.1" start="clk_0.clk" end="dac_preamp.clk" />
+ <connection kind="clock" version="18.1" start="clk_0.clk" end="hs_spi.clk" />
+ <connection kind="clock" version="18.1" start="clk_0.clk" end="ffpts.clk" />
  <connection
    kind="clock"
-   version="17.1"
+   version="18.1"
    start="clk_0.clk"
    end="adc_fifo_mem.clk_in" />
  <connection
    kind="clock"
-   version="17.1"
+   version="18.1"
    start="clk_0.clk"
    end="fifo_dummy64_in.clk_in" />
  <connection
    kind="clock"
-   version="17.1"
+   version="18.1"
    start="clk_0.clk"
    end="fifo_dummy64_out.clk_in" />
- <connection kind="clock" version="17.1" start="clk_0.clk" end="fifo_dummy.clk_in" />
+ <connection kind="clock" version="18.1" start="clk_0.clk" end="fifo_dummy.clk_in" />
  <connection
    kind="clock"
-   version="17.1"
+   version="18.1"
    start="clk_0.clk"
    end="dconv_fifo_mem.clk_in" />
- <connection kind="clock" version="17.1" start="clk_0.clk" end="i2c_int.clock" />
- <connection kind="clock" version="17.1" start="clk_0.clk" end="i2c_ext.clock" />
+ <connection kind="clock" version="18.1" start="clk_0.clk" end="i2c_int.clock" />
+ <connection kind="clock" version="18.1" start="clk_0.clk" end="i2c_ext.clock" />
  <connection
    kind="clock"
-   version="17.1"
+   version="18.1"
    start="clk_0.clk"
    end="alt_vip_vfr_vga.clock_master" />
  <connection
    kind="clock"
-   version="17.1"
+   version="18.1"
    start="clk_0.clk"
    end="dconv_fir_q.coeff_clock" />
  <connection
    kind="clock"
-   version="17.1"
+   version="18.1"
    start="clk_0.clk"
    end="dconv_fir.coeff_clock" />
  <connection
    kind="clock"
-   version="17.1"
+   version="18.1"
    start="clk_0.clk"
    end="nmr_parameters.dec_fact_clk" />
  <connection
    kind="clock"
-   version="17.1"
+   version="18.1"
    start="clk_0.clk"
    end="nmr_parameters.delay_nosig_clk" />
  <connection
    kind="clock"
-   version="17.1"
+   version="18.1"
    start="clk_0.clk"
    end="nmr_parameters.delay_sig_clk" />
  <connection
    kind="clock"
-   version="17.1"
+   version="18.1"
    start="clk_0.clk"
    end="nmr_parameters.delay_t1_clk" />
  <connection
    kind="clock"
-   version="17.1"
+   version="18.1"
    start="clk_0.clk"
    end="nmr_parameters.echo_skip_clk" />
  <connection
    kind="clock"
-   version="17.1"
+   version="18.1"
    start="clk_0.clk"
    end="nmr_parameters.echoes_per_scan_clk" />
  <connection
    kind="clock"
-   version="17.1"
+   version="18.1"
    start="clk_0.clk"
    end="hps_0.f2h_axi_clock" />
  <connection
    kind="clock"
-   version="17.1"
+   version="18.1"
    start="clk_0.clk"
    end="hps_0.h2f_axi_clock" />
  <connection
    kind="clock"
-   version="17.1"
+   version="18.1"
    start="clk_0.clk"
    end="hps_0.h2f_lw_axi_clock" />
  <connection
    kind="clock"
-   version="17.1"
+   version="18.1"
    start="clk_0.clk"
    end="nmr_parameters.init_delay_clk" />
  <connection
    kind="clock"
-   version="17.1"
+   version="18.1"
    start="clk_0.clk"
    end="nmr_sys_pll_reconfig.mgmt_clk" />
  <connection
    kind="clock"
-   version="17.1"
+   version="18.1"
    start="clk_0.clk"
    end="analyzer_pll_reconfig.mgmt_clk" />
  <connection
    kind="clock"
-   version="17.1"
+   version="18.1"
    start="clk_0.clk"
    end="nmr_parameters.mgnt_chg_dlen_clk" />
  <connection
    kind="clock"
-   version="17.1"
+   version="18.1"
    start="clk_0.clk"
    end="nmr_parameters.mgnt_chg_plen_clk" />
  <connection
    kind="clock"
-   version="17.1"
+   version="18.1"
    start="clk_0.clk"
    end="nmr_parameters.mgnt_d_clk" />
  <connection
    kind="clock"
-   version="17.1"
+   version="18.1"
    start="clk_0.clk"
    end="nmr_parameters.mgnt_dchg_dlen_clk" />
  <connection
    kind="clock"
-   version="17.1"
+   version="18.1"
    start="clk_0.clk"
    end="nmr_parameters.mgnt_dchg_plen_clk" />
  <connection
    kind="clock"
-   version="17.1"
+   version="18.1"
    start="clk_0.clk"
    end="nmr_parameters.mgnt_n_clk" />
  <connection
    kind="clock"
-   version="17.1"
+   version="18.1"
    start="clk_0.clk"
    end="adc_fifo_dc.out_clk" />
  <connection
    kind="clock"
-   version="17.1"
+   version="18.1"
    start="clk_0.clk"
    end="dconv_fifo_dc.out_clk" />
  <connection
    kind="clock"
-   version="17.1"
+   version="18.1"
    start="clk_0.clk"
    end="nmr_parameters.pulse_180deg_clk" />
  <connection
    kind="clock"
-   version="17.1"
+   version="18.1"
    start="clk_0.clk"
    end="nmr_parameters.pulse_90deg_clk" />
  <connection
    kind="clock"
-   version="17.1"
+   version="18.1"
    start="clk_0.clk"
    end="nmr_parameters.pulse_t1_clk" />
- <connection kind="clock" version="17.1" start="clk_0.clk" end="gp_pll.refclk" />
+ <connection kind="clock" version="18.1" start="clk_0.clk" end="fft_ctrl.rd_clk" />
+ <connection kind="clock" version="18.1" start="clk_0.clk" end="gp_pll.refclk" />
  <connection
    kind="clock"
-   version="17.1"
+   version="18.1"
    start="clk_0.clk"
    end="nmr_sys_pll.refclk" />
  <connection
    kind="clock"
-   version="17.1"
+   version="18.1"
    start="clk_0.clk"
    end="analyzer_pll.refclk" />
  <connection
    kind="clock"
-   version="17.1"
+   version="18.1"
    start="clk_0.clk"
    end="nmr_parameters.rx_delay_clk" />
  <connection
    kind="clock"
-   version="17.1"
+   version="18.1"
    start="clk_0.clk"
    end="nmr_parameters.samples_per_echo_clk" />
  <connection
    kind="clock"
-   version="17.1"
+   version="18.1"
    start="fifo_clk_bridge.out_clk"
    end="fifo_rst.clk" />
  <connection
    kind="clock"
-   version="17.1"
+   version="18.1"
    start="fifo_clk_bridge.out_clk"
    end="dconv_fir.clk" />
  <connection
    kind="clock"
-   version="17.1"
+   version="18.1"
    start="fifo_clk_bridge.out_clk"
    end="dconv_fir_q.clk" />
  <connection
    kind="clock"
-   version="17.1"
+   version="18.1"
    start="fifo_clk_bridge.out_clk"
    end="adc_fifo_dc.in_clk" />
  <connection
    kind="clock"
-   version="17.1"
+   version="18.1"
    start="fifo_clk_bridge.out_clk"
    end="dconv_fifo_dc.in_clk" />
  <connection
    kind="clock"
-   version="17.1"
+   version="18.1"
+   start="fifo_clk_bridge.out_clk"
+   end="fft_ctrl.wr_clk" />
+ <connection
+   kind="clock"
+   version="18.1"
    start="gp_pll.outclk0"
    end="alt_vip_vfr_vga.clock_reset" />
  <connection
    kind="clock"
-   version="17.1"
+   version="18.1"
    start="gp_pll.outclk0"
    end="alt_vip_itc_0.is_clk_rst" />
  <connection
    kind="conduit"
-   version="17.1"
+   version="18.1"
    start="nmr_sys_pll_reconfig.reconfig_from_pll"
    end="nmr_sys_pll.reconfig_from_pll">
   <parameter name="endPort" value="" />
@@ -4291,7 +4381,7 @@
  </connection>
  <connection
    kind="conduit"
-   version="17.1"
+   version="18.1"
    start="analyzer_pll_reconfig.reconfig_from_pll"
    end="analyzer_pll.reconfig_from_pll">
   <parameter name="endPort" value="" />
@@ -4302,7 +4392,7 @@
  </connection>
  <connection
    kind="conduit"
-   version="17.1"
+   version="18.1"
    start="nmr_sys_pll_reconfig.reconfig_to_pll"
    end="nmr_sys_pll.reconfig_to_pll">
   <parameter name="endPort" value="" />
@@ -4313,7 +4403,7 @@
  </connection>
  <connection
    kind="conduit"
-   version="17.1"
+   version="18.1"
    start="analyzer_pll.reconfig_to_pll"
    end="analyzer_pll_reconfig.reconfig_to_pll">
   <parameter name="endPort" value="" />
@@ -4324,382 +4414,388 @@
  </connection>
  <connection
    kind="interrupt"
-   version="17.1"
+   version="18.1"
    start="hps_0.f2h_irq0"
    end="alt_vip_vfr_vga.interrupt_sender">
   <parameter name="irqNumber" value="0" />
  </connection>
  <connection
    kind="interrupt"
-   version="17.1"
+   version="18.1"
    start="hps_0.f2h_irq0"
    end="jtag_uart.irq">
   <parameter name="irqNumber" value="2" />
  </connection>
  <connection
    kind="interrupt"
-   version="17.1"
+   version="18.1"
    start="hps_0.f2h_irq1"
    end="i2c_int.interrupt_sender">
   <parameter name="irqNumber" value="1" />
  </connection>
  <connection
    kind="interrupt"
-   version="17.1"
+   version="18.1"
    start="hps_0.f2h_irq1"
    end="i2c_ext.interrupt_sender">
   <parameter name="irqNumber" value="4" />
  </connection>
  <connection
    kind="interrupt"
-   version="17.1"
+   version="18.1"
    start="hps_0.f2h_irq1"
    end="dac_grad.irq">
   <parameter name="irqNumber" value="2" />
  </connection>
  <connection
    kind="interrupt"
-   version="17.1"
+   version="18.1"
    start="hps_0.f2h_irq1"
    end="dma_fifo.irq">
   <parameter name="irqNumber" value="0" />
  </connection>
  <connection
    kind="interrupt"
-   version="17.1"
+   version="18.1"
    start="hps_0.f2h_irq1"
    end="spi_mtch_ntwrk.irq">
   <parameter name="irqNumber" value="3" />
  </connection>
  <connection
    kind="interrupt"
-   version="17.1"
+   version="18.1"
    start="hps_0.f2h_irq1"
    end="dma_dconvi.irq">
   <parameter name="irqNumber" value="5" />
  </connection>
  <connection
    kind="interrupt"
-   version="17.1"
+   version="18.1"
    start="hps_0.f2h_irq1"
    end="spi_afe_relays.irq">
   <parameter name="irqNumber" value="7" />
  </connection>
  <connection
    kind="interrupt"
-   version="17.1"
+   version="18.1"
    start="hps_0.f2h_irq1"
    end="dac_preamp.irq">
   <parameter name="irqNumber" value="6" />
  </connection>
  <connection
    kind="interrupt"
-   version="17.1"
+   version="18.1"
    start="hps_0.f2h_irq1"
    end="hs_spi.irq">
   <parameter name="irqNumber" value="4" />
  </connection>
  <connection
    kind="reset"
-   version="17.1"
+   version="18.1"
    start="clk_0.clk_reset"
    end="nmr_parameters.adc_val_sub_reset" />
  <connection
    kind="reset"
-   version="17.1"
+   version="18.1"
    start="clk_0.clk_reset"
    end="master_secure.clk_reset" />
  <connection
    kind="reset"
-   version="17.1"
+   version="18.1"
    start="clk_0.clk_reset"
    end="master_non_sec.clk_reset" />
  <connection
    kind="reset"
-   version="17.1"
+   version="18.1"
    start="clk_0.clk_reset"
    end="alt_vip_vfr_vga.clock_master_reset" />
  <connection
    kind="reset"
-   version="17.1"
+   version="18.1"
    start="clk_0.clk_reset"
    end="alt_vip_vfr_vga.clock_reset_reset" />
  <connection
    kind="reset"
-   version="17.1"
+   version="18.1"
    start="clk_0.clk_reset"
    end="dconv_fir_q.coeff_reset" />
  <connection
    kind="reset"
-   version="17.1"
+   version="18.1"
    start="clk_0.clk_reset"
    end="dconv_fir.coeff_reset" />
  <connection
    kind="reset"
-   version="17.1"
+   version="18.1"
    start="clk_0.clk_reset"
    end="nmr_parameters.dec_fact_reset" />
  <connection
    kind="reset"
-   version="17.1"
+   version="18.1"
    start="clk_0.clk_reset"
    end="nmr_parameters.delay_nosig_reset" />
  <connection
    kind="reset"
-   version="17.1"
+   version="18.1"
    start="clk_0.clk_reset"
    end="nmr_parameters.delay_sig_reset" />
  <connection
    kind="reset"
-   version="17.1"
+   version="18.1"
    start="clk_0.clk_reset"
    end="nmr_parameters.delay_t1_reset" />
  <connection
    kind="reset"
-   version="17.1"
+   version="18.1"
    start="clk_0.clk_reset"
    end="nmr_parameters.echo_skip_reset" />
  <connection
    kind="reset"
-   version="17.1"
+   version="18.1"
    start="clk_0.clk_reset"
    end="nmr_parameters.echoes_per_scan_reset" />
  <connection
    kind="reset"
-   version="17.1"
+   version="18.1"
    start="clk_0.clk_reset"
    end="adc_fifo_dc.in_clk_reset" />
  <connection
    kind="reset"
-   version="17.1"
+   version="18.1"
    start="clk_0.clk_reset"
    end="dconv_fifo_dc.in_clk_reset" />
  <connection
    kind="reset"
-   version="17.1"
+   version="18.1"
    start="clk_0.clk_reset"
    end="nmr_parameters.init_delay_reset" />
  <connection
    kind="reset"
-   version="17.1"
+   version="18.1"
    start="clk_0.clk_reset"
    end="alt_vip_itc_0.is_clk_rst_reset" />
  <connection
    kind="reset"
-   version="17.1"
+   version="18.1"
    start="clk_0.clk_reset"
    end="nmr_sys_pll_reconfig.mgmt_reset" />
  <connection
    kind="reset"
-   version="17.1"
+   version="18.1"
    start="clk_0.clk_reset"
    end="analyzer_pll_reconfig.mgmt_reset" />
  <connection
    kind="reset"
-   version="17.1"
+   version="18.1"
    start="clk_0.clk_reset"
    end="nmr_parameters.mgnt_chg_dlen_reset" />
  <connection
    kind="reset"
-   version="17.1"
+   version="18.1"
    start="clk_0.clk_reset"
    end="nmr_parameters.mgnt_chg_plen_reset" />
  <connection
    kind="reset"
-   version="17.1"
+   version="18.1"
    start="clk_0.clk_reset"
    end="nmr_parameters.mgnt_d_reset" />
  <connection
    kind="reset"
-   version="17.1"
+   version="18.1"
    start="clk_0.clk_reset"
    end="nmr_parameters.mgnt_dchg_dlen_reset" />
  <connection
    kind="reset"
-   version="17.1"
+   version="18.1"
    start="clk_0.clk_reset"
    end="nmr_parameters.mgnt_dchg_plen_reset" />
  <connection
    kind="reset"
-   version="17.1"
+   version="18.1"
    start="clk_0.clk_reset"
    end="nmr_parameters.mgnt_n_reset" />
  <connection
    kind="reset"
-   version="17.1"
+   version="18.1"
    start="clk_0.clk_reset"
    end="adc_fifo_dc.out_clk_reset" />
  <connection
    kind="reset"
-   version="17.1"
+   version="18.1"
    start="clk_0.clk_reset"
    end="dconv_fifo_dc.out_clk_reset" />
  <connection
    kind="reset"
-   version="17.1"
+   version="18.1"
    start="clk_0.clk_reset"
    end="nmr_parameters.pulse_180deg_reset" />
  <connection
    kind="reset"
-   version="17.1"
+   version="18.1"
    start="clk_0.clk_reset"
    end="nmr_parameters.pulse_90deg_reset" />
  <connection
    kind="reset"
-   version="17.1"
+   version="18.1"
    start="clk_0.clk_reset"
    end="nmr_parameters.pulse_t1_reset" />
  <connection
    kind="reset"
-   version="17.1"
+   version="18.1"
    start="clk_0.clk_reset"
    end="sysid_qsys.reset" />
  <connection
    kind="reset"
-   version="17.1"
+   version="18.1"
    start="clk_0.clk_reset"
    end="jtag_uart.reset" />
  <connection
    kind="reset"
-   version="17.1"
+   version="18.1"
    start="clk_0.clk_reset"
    end="ctrl_out.reset" />
  <connection
    kind="reset"
-   version="17.1"
+   version="18.1"
    start="clk_0.clk_reset"
    end="dac_grad.reset" />
  <connection
    kind="reset"
-   version="17.1"
+   version="18.1"
    start="clk_0.clk_reset"
    end="ctrl_in.reset" />
  <connection
    kind="reset"
-   version="17.1"
+   version="18.1"
    start="clk_0.clk_reset"
    end="gp_pll.reset" />
  <connection
    kind="reset"
-   version="17.1"
+   version="18.1"
    start="clk_0.clk_reset"
    end="dma_fifo.reset" />
- <connection kind="reset" version="17.1" start="clk_0.clk_reset" end="sdram.reset" />
+ <connection kind="reset" version="18.1" start="clk_0.clk_reset" end="sdram.reset" />
  <connection
    kind="reset"
-   version="17.1"
+   version="18.1"
    start="clk_0.clk_reset"
    end="switches.reset" />
  <connection
    kind="reset"
-   version="17.1"
+   version="18.1"
    start="clk_0.clk_reset"
    end="aux_cnt_out.reset" />
  <connection
    kind="reset"
-   version="17.1"
+   version="18.1"
    start="clk_0.clk_reset"
    end="spi_mtch_ntwrk.reset" />
  <connection
    kind="reset"
-   version="17.1"
+   version="18.1"
    start="clk_0.clk_reset"
    end="dma_dconvi.reset" />
  <connection
    kind="reset"
-   version="17.1"
+   version="18.1"
    start="clk_0.clk_reset"
    end="dma_dummy.reset" />
  <connection
    kind="reset"
-   version="17.1"
+   version="18.1"
    start="clk_0.clk_reset"
    end="spi_afe_relays.reset" />
  <connection
    kind="reset"
-   version="17.1"
+   version="18.1"
    start="clk_0.clk_reset"
    end="dac_preamp.reset" />
  <connection
    kind="reset"
-   version="17.1"
+   version="18.1"
    start="clk_0.clk_reset"
    end="hs_spi.reset" />
+ <connection kind="reset" version="18.1" start="clk_0.clk_reset" end="ffpts.reset" />
  <connection
    kind="reset"
-   version="17.1"
+   version="18.1"
    start="clk_0.clk_reset"
    end="adc_fifo_mem.reset_in" />
  <connection
    kind="reset"
-   version="17.1"
+   version="18.1"
    start="clk_0.clk_reset"
    end="fifo_dummy64_in.reset_in" />
  <connection
    kind="reset"
-   version="17.1"
+   version="18.1"
    start="clk_0.clk_reset"
    end="fifo_dummy64_out.reset_in" />
  <connection
    kind="reset"
-   version="17.1"
+   version="18.1"
    start="clk_0.clk_reset"
    end="fifo_dummy.reset_in" />
  <connection
    kind="reset"
-   version="17.1"
+   version="18.1"
    start="clk_0.clk_reset"
    end="dconv_fifo_mem.reset_in" />
  <connection
    kind="reset"
-   version="17.1"
+   version="18.1"
    start="clk_0.clk_reset"
    end="i2c_int.reset_sink" />
  <connection
    kind="reset"
-   version="17.1"
+   version="18.1"
    start="clk_0.clk_reset"
    end="i2c_ext.reset_sink" />
  <connection
    kind="reset"
-   version="17.1"
+   version="18.1"
    start="clk_0.clk_reset"
    end="nmr_parameters.rx_delay_reset" />
  <connection
    kind="reset"
-   version="17.1"
+   version="18.1"
    start="clk_0.clk_reset"
    end="nmr_parameters.samples_per_echo_reset" />
  <connection
    kind="reset"
-   version="17.1"
+   version="18.1"
    start="fifo_rst.out_reset"
    end="adc_fifo_dc.in_clk_reset" />
  <connection
    kind="reset"
-   version="17.1"
+   version="18.1"
    start="fifo_rst.out_reset"
    end="dconv_fifo_dc.in_clk_reset" />
  <connection
    kind="reset"
-   version="17.1"
+   version="18.1"
    start="fifo_rst.out_reset"
    end="adc_fifo_dc.out_clk_reset" />
  <connection
    kind="reset"
-   version="17.1"
+   version="18.1"
    start="fifo_rst.out_reset"
    end="dconv_fifo_dc.out_clk_reset" />
  <connection
    kind="reset"
-   version="17.1"
+   version="18.1"
    start="fifo_rst.out_reset"
    end="adc_fifo_mem.reset_in" />
  <connection
    kind="reset"
-   version="17.1"
+   version="18.1"
    start="fifo_rst.out_reset"
    end="dconv_fifo_mem.reset_in" />
+ <connection
+   kind="reset"
+   version="18.1"
+   start="fifo_rst.out_reset"
+   end="fft_ctrl.rst" />
  <interconnectRequirement for="$system" name="qsys_mm.clockCrossingAdapter" value="HANDSHAKE" />
  <interconnectRequirement for="$system" name="qsys_mm.maxAdditionalLatency" value="1" />
 </system>

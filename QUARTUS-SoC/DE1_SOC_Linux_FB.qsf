@@ -7,7 +7,7 @@ set_global_assignment -name FAMILY "Cyclone V"
 set_global_assignment -name DEVICE 5CSEMA5F31C6
 set_global_assignment -name TOP_LEVEL_ENTITY "DE1_SOC_Linux_FB"
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 13
-set_global_assignment -name LAST_QUARTUS_VERSION "17.1.0 Lite Edition"
+set_global_assignment -name LAST_QUARTUS_VERSION "18.1.0 Standard Edition"
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "THU JUL 11 11:26:45 2013"
 set_global_assignment -name DEVICE_FILTER_PACKAGE FBGA
 
@@ -986,32 +986,6 @@ set_global_assignment -name EDA_TEST_BENCH_FILE "../QUARTUS-NoSoC/HDL/NMR_PULSE_
 set_global_assignment -name EDA_TEST_BENCH_FILE "../QUARTUS-NoSoC/HDL/NMR_Controller_tb.v" -section_id NMR_Controller_tb
 set_global_assignment -name EDA_TEST_BENCH_FILE "../QUARTUS-NoSoC/HDL/ADC_ACQ_WINGEN_tb.v" -section_id ADC_ACQ_WINGEN_tb
 set_global_assignment -name EDA_TEST_BENCH_FILE "../QUARTUS-NoSoC/HDL/GNRL_IQcomb_decimator_tb.v" -section_id GNRL_IQcomb_decimator_tb
-set_global_assignment -name VERILOG_FILE "../QUARTUS-NoSoC/HDL/MGNT_Controller.v"
-set_global_assignment -name VERILOG_FILE "../QUARTUS-NoSoC/HDL/NMR_TX_SD_WINGEN.v"
-set_global_assignment -name VERILOG_FILE "../QUARTUS-NoSoC/HDL/NMR_QSW_EN_WINGEN.v"
-set_global_assignment -name QIP_FILE CODE_qsys/soc_system/synthesis/soc_system.qip
-set_global_assignment -name VERILOG_FILE "../QUARTUS-NoSoC/HDL/GNRL_IQcomb_decimator.v"
-set_global_assignment -name VERILOG_TEST_BENCH_FILE "../QUARTUS-NoSoC/HDL/GNRL_dconv_nofilter_tb.v"
-set_global_assignment -name VERILOG_FILE "../QUARTUS-NoSoC/HDL/GNRL_dconv_nofilter.v"
-set_global_assignment -name VERILOG_FILE "../QUARTUS-NoSoC/HDL/GNRL_delayed_pulser.v"
-set_global_assignment -name VERILOG_FILE "../QUARTUS-NoSoC/HDL/NMR_PULSE_PROGRAM_tb.v"
-set_global_assignment -name VERILOG_FILE "../QUARTUS-NoSoC/HDL/NMR_PULSE_PROGRAM.v"
-set_global_assignment -name VERILOG_FILE "../QUARTUS-NoSoC/HDL/NMR_Controller_tb.v"
-set_global_assignment -name VERILOG_FILE "../QUARTUS-NoSoC/HDL/NMR_Controller.v"
-set_global_assignment -name VERILOG_FILE "../QUARTUS-NoSoC/HDL/CDC_Input_Synchronizer.v"
-set_global_assignment -name VERILOG_FILE "../QUARTUS-NoSoC/HDL/ADC_LTC1746_DRV_tb.v"
-set_global_assignment -name VERILOG_FILE "../QUARTUS-NoSoC/HDL/ADC_LTC1746_DRV.v"
-set_global_assignment -name VERILOG_FILE "../QUARTUS-NoSoC/HDL/ADC_ACQ_WINGEN_tb.v"
-set_global_assignment -name VERILOG_FILE "../QUARTUS-NoSoC/HDL/ADC_ACQ_WINGEN.v"
-set_global_assignment -name QIP_FILE "../QUARTUS-NoSoC/HDL/ALTERA_IPs/altiobuf.qip"
-set_global_assignment -name VERILOG_FILE "../QUARTUS-NoSoC/CODE_verilog/CDC_Input_Synchronizer.v"
-set_global_assignment -name QIP_FILE CODE_verilog/altera_IPs/vga_pll/vga_pll.qip
-set_global_assignment -name SDC_FILE DE1_SOC_Linux_FB.sdc
-set_global_assignment -name VERILOG_FILE DE1_SOC_Linux_FB.v
-set_global_assignment -name SIGNALTAP_FILE CODE_signaltap/signaltap.stp
-set_global_assignment -name SIGNALTAP_FILE ltc1746_adc_test.stp
-set_global_assignment -name VERILOG_FILE "../QUARTUS-NoSoC/HDL/NMR_RXDUP_EN_WINGEN.v"
-set_global_assignment -name SIGNALTAP_FILE CODE_signaltap/phase_debug.stp
 set_global_assignment -name SLD_NODE_CREATOR_ID 110 -section_id phase_debug
 set_global_assignment -name SLD_NODE_ENTITY_NAME sld_signaltap -section_id phase_debug
 set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_clk -to pulseprog_clk -section_id phase_debug
@@ -1079,5 +1053,37 @@ set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_COUNTER_PIPELINE=
 set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_ADVANCED_TRIGGER_ENTITY=basic,1," -section_id phase_debug
 set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_TRIGGER_LEVEL_PIPELINE=1" -section_id phase_debug
 set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_ENABLE_ADVANCED_TRIGGER=0" -section_id phase_debug
-set_global_assignment -name SLD_FILE db/phase_debug_auto_stripped.stp
+set_global_assignment -name QIP_FILE "../QUARTUS-NoSoC/HDL/FFT_Ctrl_Qsys_Module/fft_fifo/fft_fifo/synthesis/fft_fifo.qip"
+set_global_assignment -name QIP_FILE "../QUARTUS-NoSoC/HDL/FFT_Ctrl_Qsys_Module/fft_ram/fft_ram.qip"
+set_global_assignment -name QIP_FILE "../QUARTUS-NoSoC/HDL/FFT_Ctrl_Qsys_Module/fft_gp/synthesis/fft_gp.qip"
+set_global_assignment -name VERILOG_FILE "../QUARTUS-NoSoC/HDL/FFT_Ctrl_Qsys_Module/fft_ctrl/fft_ctrl_out.v"
+set_global_assignment -name VERILOG_FILE "../QUARTUS-NoSoC/HDL/FFT_Ctrl_Qsys_Module/fft_ctrl/fft_ctrl_in.v"
+set_global_assignment -name VERILOG_FILE "../QUARTUS-NoSoC/HDL/FFT_Ctrl_Qsys_Module/fft_ctrl/fft_ctrl.v"
+set_global_assignment -name VERILOG_FILE "../QUARTUS-NoSoC/HDL/MGNT_Controller.v"
+set_global_assignment -name VERILOG_FILE "../QUARTUS-NoSoC/HDL/NMR_TX_SD_WINGEN.v"
+set_global_assignment -name VERILOG_FILE "../QUARTUS-NoSoC/HDL/NMR_QSW_EN_WINGEN.v"
+set_global_assignment -name QIP_FILE CODE_qsys/soc_system/synthesis/soc_system.qip
+set_global_assignment -name VERILOG_FILE "../QUARTUS-NoSoC/HDL/GNRL_IQcomb_decimator.v"
+set_global_assignment -name VERILOG_TEST_BENCH_FILE "../QUARTUS-NoSoC/HDL/GNRL_dconv_nofilter_tb.v"
+set_global_assignment -name VERILOG_FILE "../QUARTUS-NoSoC/HDL/GNRL_dconv_nofilter.v"
+set_global_assignment -name VERILOG_FILE "../QUARTUS-NoSoC/HDL/GNRL_delayed_pulser.v"
+set_global_assignment -name VERILOG_FILE "../QUARTUS-NoSoC/HDL/NMR_PULSE_PROGRAM_tb.v"
+set_global_assignment -name VERILOG_FILE "../QUARTUS-NoSoC/HDL/NMR_PULSE_PROGRAM.v"
+set_global_assignment -name VERILOG_FILE "../QUARTUS-NoSoC/HDL/NMR_Controller_tb.v"
+set_global_assignment -name VERILOG_FILE "../QUARTUS-NoSoC/HDL/NMR_Controller.v"
+set_global_assignment -name VERILOG_FILE "../QUARTUS-NoSoC/HDL/CDC_Input_Synchronizer.v"
+set_global_assignment -name VERILOG_FILE "../QUARTUS-NoSoC/HDL/ADC_LTC1746_DRV_tb.v"
+set_global_assignment -name VERILOG_FILE "../QUARTUS-NoSoC/HDL/ADC_LTC1746_DRV.v"
+set_global_assignment -name VERILOG_FILE "../QUARTUS-NoSoC/HDL/ADC_ACQ_WINGEN_tb.v"
+set_global_assignment -name VERILOG_FILE "../QUARTUS-NoSoC/HDL/ADC_ACQ_WINGEN.v"
+set_global_assignment -name QIP_FILE "../QUARTUS-NoSoC/HDL/ALTERA_IPs/altiobuf.qip"
+set_global_assignment -name VERILOG_FILE "../QUARTUS-NoSoC/CODE_verilog/CDC_Input_Synchronizer.v"
+set_global_assignment -name QIP_FILE CODE_verilog/altera_IPs/vga_pll/vga_pll.qip
+set_global_assignment -name SDC_FILE DE1_SOC_Linux_FB.sdc
+set_global_assignment -name VERILOG_FILE DE1_SOC_Linux_FB.v
+set_global_assignment -name SIGNALTAP_FILE CODE_signaltap/signaltap.stp
+set_global_assignment -name SIGNALTAP_FILE ltc1746_adc_test.stp
+set_global_assignment -name VERILOG_FILE "../QUARTUS-NoSoC/HDL/NMR_RXDUP_EN_WINGEN.v"
+set_global_assignment -name SIGNALTAP_FILE CODE_signaltap/phase_debug.stp
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_global_assignment -name SLD_FILE db/phase_debug_auto_stripped.stp
