@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EnsembleReport name="fft_fifo" kind="fft_fifo" version="1.0" fabric="QSYS">
  <!-- Format version 18.1 625 (Future versions may contain additional information.) -->
- <!-- 2021.07.25.21:08:03 -->
+ <!-- 2021.07.26.19:18:15 -->
  <!-- A collection of modules and connections -->
  <parameter name="AUTO_GENERATION_ID">
   <type>java.lang.Integer</type>
-  <value>1627261683</value>
+  <value>1627352295</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>false</visible>
@@ -142,7 +142,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="BITS_PER_SYMBOL">
    <type>int</type>
-   <value>14</value>
+   <value>15</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -454,7 +454,7 @@ parameters are a RESULT of the module parameters. -->
    </parameter>
    <parameter name="dataBitsPerSymbol">
     <type>int</type>
-    <value>14</value>
+    <value>15</value>
     <derived>false</derived>
     <enabled>true</enabled>
     <visible>true</visible>
@@ -545,7 +545,7 @@ parameters are a RESULT of the module parameters. -->
    <port>
     <name>in_data</name>
     <direction>Input</direction>
-    <width>14</width>
+    <width>15</width>
     <role>data</role>
    </port>
    <port>
@@ -603,7 +603,7 @@ parameters are a RESULT of the module parameters. -->
    </parameter>
    <parameter name="dataBitsPerSymbol">
     <type>int</type>
-    <value>14</value>
+    <value>15</value>
     <derived>false</derived>
     <enabled>true</enabled>
     <visible>true</visible>
@@ -694,7 +694,7 @@ parameters are a RESULT of the module parameters. -->
    <port>
     <name>out_data</name>
     <direction>Output</direction>
-    <width>14</width>
+    <width>15</width>
     <role>data</role>
    </port>
    <port>

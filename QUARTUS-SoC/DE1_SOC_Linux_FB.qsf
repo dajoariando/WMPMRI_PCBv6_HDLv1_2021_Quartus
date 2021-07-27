@@ -1053,12 +1053,9 @@ set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_COUNTER_PIPELINE=
 set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_ADVANCED_TRIGGER_ENTITY=basic,1," -section_id phase_debug
 set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_TRIGGER_LEVEL_PIPELINE=1" -section_id phase_debug
 set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_ENABLE_ADVANCED_TRIGGER=0" -section_id phase_debug
-set_global_assignment -name QIP_FILE "../QUARTUS-NoSoC/HDL/FFT_Ctrl_Qsys_Module/fft_fifo/fft_fifo/synthesis/fft_fifo.qip"
 set_global_assignment -name QIP_FILE "../QUARTUS-NoSoC/HDL/FFT_Ctrl_Qsys_Module/fft_ram/fft_ram.qip"
 set_global_assignment -name QIP_FILE "../QUARTUS-NoSoC/HDL/FFT_Ctrl_Qsys_Module/fft_gp/synthesis/fft_gp.qip"
-set_global_assignment -name VERILOG_FILE "../QUARTUS-NoSoC/HDL/FFT_Ctrl_Qsys_Module/fft_ctrl/fft_ctrl_out.v"
-set_global_assignment -name VERILOG_FILE "../QUARTUS-NoSoC/HDL/FFT_Ctrl_Qsys_Module/fft_ctrl/fft_ctrl_in.v"
-set_global_assignment -name VERILOG_FILE "../QUARTUS-NoSoC/HDL/FFT_Ctrl_Qsys_Module/fft_ctrl/fft_ctrl.v"
+set_global_assignment -name QIP_FILE "../QUARTUS-NoSoC/HDL/FFT_Ctrl_Qsys_Module/fft_fifo/fft_fifo/synthesis/fft_fifo.qip"
 set_global_assignment -name VERILOG_FILE "../QUARTUS-NoSoC/HDL/MGNT_Controller.v"
 set_global_assignment -name VERILOG_FILE "../QUARTUS-NoSoC/HDL/NMR_TX_SD_WINGEN.v"
 set_global_assignment -name VERILOG_FILE "../QUARTUS-NoSoC/HDL/NMR_QSW_EN_WINGEN.v"

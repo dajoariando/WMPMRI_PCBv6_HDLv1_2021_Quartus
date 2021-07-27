@@ -6,7 +6,7 @@
    version="1.0"
    description=""
    tags=""
-   categories="" />
+   categories="System" />
  <parameter name="bonusData"><![CDATA[bonusData 
 {
    element fft_fifo
@@ -73,7 +73,7 @@
    kind="altera_avalon_dc_fifo"
    version="18.1"
    enabled="1">
-  <parameter name="BITS_PER_SYMBOL" value="14" />
+  <parameter name="BITS_PER_SYMBOL" value="15" />
   <parameter name="CHANNEL_WIDTH" value="0" />
   <parameter name="ENABLE_EXPLICIT_MAXCHANNEL" value="false" />
   <parameter name="ERROR_WIDTH" value="0" />

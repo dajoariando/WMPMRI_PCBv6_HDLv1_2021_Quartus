@@ -4,14 +4,14 @@
 
 `timescale 1 ps / 1 ps
 module fft_fifo (
-		input  wire [13:0] fft_fifo_in_data,               //            fft_fifo_in.data
+		input  wire [14:0] fft_fifo_in_data,               //            fft_fifo_in.data
 		input  wire        fft_fifo_in_valid,              //                       .valid
 		output wire        fft_fifo_in_ready,              //                       .ready
 		input  wire        fft_fifo_in_startofpacket,      //                       .startofpacket
 		input  wire        fft_fifo_in_endofpacket,        //                       .endofpacket
 		input  wire        fft_fifo_in_clk_clk,            //        fft_fifo_in_clk.clk
 		input  wire        fft_fifo_in_clk_reset_reset_n,  //  fft_fifo_in_clk_reset.reset_n
-		output wire [13:0] fft_fifo_out_data,              //           fft_fifo_out.data
+		output wire [14:0] fft_fifo_out_data,              //           fft_fifo_out.data
 		output wire        fft_fifo_out_valid,             //                       .valid
 		input  wire        fft_fifo_out_ready,             //                       .ready
 		output wire        fft_fifo_out_startofpacket,     //                       .startofpacket
@@ -22,7 +22,7 @@ module fft_fifo (
 
 	altera_avalon_dc_fifo #(
 		.SYMBOLS_PER_BEAT   (1),
-		.BITS_PER_SYMBOL    (14),
+		.BITS_PER_SYMBOL    (15),
 		.FIFO_DEPTH         (1024),
 		.CHANNEL_WIDTH      (0),
 		.ERROR_WIDTH        (0),

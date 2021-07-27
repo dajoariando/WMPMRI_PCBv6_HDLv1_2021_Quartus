@@ -385,7 +385,7 @@
          type = "String";
       }
    }
-   element fft_ctrl
+   element fft_ctrl_0
    {
       datum _sortIndex
       {
@@ -393,8 +393,13 @@
          type = "int";
       }
    }
-   element fft_ctrl.s0
+   element fft_ctrl_0.s0
    {
+      datum _lockedAddress
+      {
+         value = "1";
+         type = "boolean";
+      }
       datum baseAddress
       {
          value = "67117056";
@@ -934,6 +939,14 @@
          type = "String";
       }
    }
+   element soc_system
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
+      }
+   }
    element spi_afe_relays
    {
       datum _sortIndex
@@ -1170,7 +1183,7 @@
    dir="end" />
  <interface
    name="fft_ctrl"
-   internal="fft_ctrl.ext_interface"
+   internal="fft_ctrl_0.ext_interface"
    type="conduit"
    dir="end" />
  <interface
@@ -1907,9 +1920,9 @@
   <parameter name="simDrivenValue" value="0" />
   <parameter name="width" value="32" />
  </module>
- <module name="fft_ctrl" kind="fft_ctrl" version="1.0" enabled="1">
+ <module name="fft_ctrl_0" kind="fft_ctrl" version="1.0" enabled="1">
   <parameter name="BUSWIDTH" value="32" />
-  <parameter name="DWIDTH" value="14" />
+  <parameter name="DWIDTH" value="15" />
   <parameter name="FFTPTS_WIDTH" value="11" />
   <parameter name="FFT_INWIDTH" value="18" />
   <parameter name="FFT_OUTWIDTH" value="29" />
@@ -3256,7 +3269,7 @@
    kind="avalon"
    version="18.1"
    start="hps_0.h2f_axi_master"
-   end="fft_ctrl.s0">
+   end="fft_ctrl_0.s0">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x04002000" />
   <parameter name="defaultConnection" value="false" />
@@ -4306,7 +4319,7 @@
    version="18.1"
    start="clk_0.clk"
    end="nmr_parameters.pulse_t1_clk" />
- <connection kind="clock" version="18.1" start="clk_0.clk" end="fft_ctrl.rd_clk" />
+ <connection kind="clock" version="18.1" start="clk_0.clk" end="fft_ctrl_0.rd_clk" />
  <connection kind="clock" version="18.1" start="clk_0.clk" end="gp_pll.refclk" />
  <connection
    kind="clock"
@@ -4357,7 +4370,7 @@
    kind="clock"
    version="18.1"
    start="fifo_clk_bridge.out_clk"
-   end="fft_ctrl.wr_clk" />
+   end="fft_ctrl_0.wr_clk" />
  <connection
    kind="clock"
    version="18.1"
@@ -4795,7 +4808,7 @@
    kind="reset"
    version="18.1"
    start="fifo_rst.out_reset"
-   end="fft_ctrl.rst" />
+   end="fft_ctrl_0.rst" />
  <interconnectRequirement for="$system" name="qsys_mm.clockCrossingAdapter" value="HANDSHAKE" />
  <interconnectRequirement for="$system" name="qsys_mm.maxAdditionalLatency" value="1" />
 </system>

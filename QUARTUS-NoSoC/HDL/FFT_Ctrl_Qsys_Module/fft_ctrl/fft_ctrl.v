@@ -8,7 +8,7 @@
 
 module fft_ctrl
 #(
-	parameter DWIDTH = 14, 				// set by the FIFO width size
+	parameter DWIDTH = 15, 				// set by the FIFO width size
 	parameter FFT_INWIDTH = 18, 		// set by the FFT input width size
 	parameter FFT_OUTWIDTH = 29, 		// set by the FFT output width size
 	parameter FFTPTS_WIDTH = 11, 		// set by the FFT input width size
@@ -79,26 +79,26 @@ module fft_ctrl
 	);
 	
 	fft_gp fft_gp1 (
-		.clk          (out_clk),          							//    clk.clk
-		.reset_n      (~rst),      				//    rst.reset_n
-		.sink_valid   (ffout_valid),   								//   sink.sink_valid
-		.sink_ready   (ffout_ready),   								//       .sink_ready
-		.sink_error   (2'b00),   									//       .sink_error
-		.sink_sop     (ffout_sop),     								//       .sink_sop
-		.sink_eop     (ffout_eop),     								//       .sink_eop
-		//.sink_real    ( { {(FFT_INWIDTH-DWIDTH){1'b0}} , {ffout_data} } ),		//       .sink_real
-		.sink_real    ( { {(FFT_INWIDTH-DWIDTH){ffout_data[DWIDTH-1]}} , {ffout_data} } ),		//       .sink_real
-		.sink_imag    ({FFT_INWIDTH{1'b0}}),    						//       .sink_imag
-		.fftpts_in    (fftpts_in),    								//       .fftpts_in
-		.inverse      (1'b0),      									//       .inverse
-		.source_valid (fftout_valid), // source.source_valid
-		.source_ready (fftout_ready), //       .source_ready
-		.source_error (), 											//       .source_error
-		.source_sop   (fftout_sop),   //       .source_sop
-		.source_eop   (fftout_eop),   //       .source_eop
-		.source_real  (fftout_data_real),  //       .source_real
-		.source_imag  (fftout_data_imag),  //       .source_imag
-		.fftpts_out   (fftpts_out)    //       .fftpts_out
+		.clk          (out_clk),          									//    clk.clk
+		.reset_n      (~rst),      											//    rst.reset_n
+		.sink_valid   (ffout_valid),   										//   sink.sink_valid
+		.sink_ready   (ffout_ready),   										//       .sink_ready
+		.sink_error   (2'b00),   											//       .sink_error
+		.sink_sop     (ffout_sop),     										//       .sink_sop
+		.sink_eop     (ffout_eop),     										//       .sink_eop
+		//.sink_real    ( { {(FFT_INWIDTH-DWIDTH){1'b0}} , {ffout_data} } ),	//       .sink_real. Put zero padding to the interface. Use this line if the data is not subtracted by DC
+		.sink_real    ( { {(FFT_INWIDTH-DWIDTH){ffout_data[DWIDTH-1]}} , {ffout_data} } ),		//       .sink_real. Put MSB extension to preserve sign. Remember that the ADC data is always positive. If this line is to be used, subtract the ADC output data with its DC value.
+		.sink_imag    ({FFT_INWIDTH{1'b0}}),    							//       .sink_imag
+		.fftpts_in    (fftpts_in),    										//       .fftpts_in
+		.inverse      (1'b0),      											//       .inverse
+		.source_valid (fftout_valid), 										//       .source_valid
+		.source_ready (fftout_ready), 										//       .source_ready
+		.source_error (), 													//       .source_error
+		.source_sop   (fftout_sop),   										//       .source_sop
+		.source_eop   (fftout_eop),   										//       .source_eop
+		.source_real  (fftout_data_real),  									//       .source_real
+		.source_imag  (fftout_data_imag),  									//       .source_imag
+		.fftpts_out   (fftpts_out)    										//       .fftpts_out
 	);
 	
 	assign fftout_ready = 1'b1;

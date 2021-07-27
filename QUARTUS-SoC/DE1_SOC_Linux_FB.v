@@ -495,7 +495,7 @@ module DE1_SOC_Linux_FB(
 			pll_nmr_sys_locked		// PLL lock status for the NMR pulse programmer
 		}),
 		.ctrl_out_export({
-			fft_start,
+			// fft_start,
 			HS_INIT,
 			HS_DA,
 			HS_INV,
@@ -652,13 +652,15 @@ module DE1_SOC_Linux_FB(
         .hs_spi_SS_n                (HS_CS),                                //                         
 	
 		// Custom FFT control module. Reset signal is combined with the adc_fifo_reset
-		.fft_ctrl_data                             (adc_data_in[13:0]),                             //                    fft_ctrl.data
-        .fft_ctrl_fftpts_in                        (fftpts[10:0]),                        //                            .fftpts_in
-        .fft_ctrl_start                            (fft_start_sync),                            //                            .start
-        .ffpts_export                              (fftpts)                               //                       ffpts.export
+		.fft_ctrl_data                             ({1'b0,adc_data_in} - adc_val_sub_reg[ADC_PHYS_WIDTH:0]),	// .fft_ctrl.data. data subtracted with its DC value. DC value should be manually set using C programming.
+        .fft_ctrl_fftpts_in                        (fftpts[10:0]),												// .fftpts_in
+        .fft_ctrl_start                            (fft_start_sync),											// .start
+        .ffpts_export                              (fftpts)														// .ffpts.export
 	);
 	
+	
 	// generating a single pulse using FSMSTAT that is synchronized with ADC_CLKOUT
+	assign fft_start = enable_adc;
 	GNRL_delayed_pulser
 	#(
 		.DELAY_WIDTH (4)
@@ -721,6 +723,8 @@ module DE1_SOC_Linux_FB(
 		.CLK			(adc_clkout),
 		.RESET			(FSM_GNRTD_RST__adc_clk)
 	);
+	
+	
 	
 	// decimator module
 	GNRL_IQcomb_decimator // POSSIBLE ISSUE: the IQ output from the filter also have 2 data_valid signals, and is only being used here. So it assumes that the data is always present at the same time, which is typical.

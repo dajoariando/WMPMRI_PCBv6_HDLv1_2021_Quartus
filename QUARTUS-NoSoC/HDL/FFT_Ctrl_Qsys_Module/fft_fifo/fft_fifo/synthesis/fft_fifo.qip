@@ -2,7 +2,7 @@ set_global_assignment -entity "fft_fifo" -library "fft_fifo" -name IP_TOOL_NAME 
 set_global_assignment -entity "fft_fifo" -library "fft_fifo" -name IP_TOOL_VERSION "18.1"
 set_global_assignment -entity "fft_fifo" -library "fft_fifo" -name IP_TOOL_ENV "Qsys"
 set_global_assignment -library "fft_fifo" -name SOPCINFO_FILE [file join $::quartus(qip_path) "../../fft_fifo.sopcinfo"]
-set_global_assignment -entity "fft_fifo" -library "fft_fifo" -name SLD_INFO "QSYS_NAME fft_fifo HAS_SOPCINFO 1 GENERATION_ID 1627261683"
+set_global_assignment -entity "fft_fifo" -library "fft_fifo" -name SLD_INFO "QSYS_NAME fft_fifo HAS_SOPCINFO 1 GENERATION_ID 1627352295"
 set_global_assignment -library "fft_fifo" -name MISC_FILE [file join $::quartus(qip_path) "../fft_fifo.cmp"]
 set_global_assignment -library "fft_fifo" -name SLD_FILE [file join $::quartus(qip_path) "fft_fifo.debuginfo"]
 set_global_assignment -entity "fft_fifo" -library "fft_fifo" -name IP_TARGETED_DEVICE_FAMILY "Cyclone V"
@@ -15,7 +15,7 @@ set_global_assignment -entity "fft_fifo" -library "fft_fifo" -name IP_COMPONENT_
 set_global_assignment -entity "fft_fifo" -library "fft_fifo" -name IP_COMPONENT_REPORT_HIERARCHY "On"
 set_global_assignment -entity "fft_fifo" -library "fft_fifo" -name IP_COMPONENT_INTERNAL "Off"
 set_global_assignment -entity "fft_fifo" -library "fft_fifo" -name IP_COMPONENT_VERSION "MS4w"
-set_global_assignment -entity "fft_fifo" -library "fft_fifo" -name IP_COMPONENT_PARAMETER "QVVUT19HRU5FUkFUSU9OX0lE::MTYyNzI2MTY4Mw==::QXV0byBHRU5FUkFUSU9OX0lE"
+set_global_assignment -entity "fft_fifo" -library "fft_fifo" -name IP_COMPONENT_PARAMETER "QVVUT19HRU5FUkFUSU9OX0lE::MTYyNzM1MjI5NQ==::QXV0byBHRU5FUkFUSU9OX0lE"
 set_global_assignment -entity "fft_fifo" -library "fft_fifo" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0VfRkFNSUxZ::Q3ljbG9uZSBW::QXV0byBERVZJQ0VfRkFNSUxZ"
 set_global_assignment -entity "fft_fifo" -library "fft_fifo" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0U=::NUNTRU1BNUYzMUM2::QXV0byBERVZJQ0U="
 set_global_assignment -entity "fft_fifo" -library "fft_fifo" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0VfU1BFRURHUkFERQ==::Ng==::QXV0byBERVZJQ0VfU1BFRURHUkFERQ=="
@@ -32,7 +32,7 @@ set_global_assignment -entity "altera_avalon_dc_fifo" -library "fft_fifo" -name 
 set_global_assignment -entity "altera_avalon_dc_fifo" -library "fft_fifo" -name IP_COMPONENT_AUTHOR "QWx0ZXJhIENvcnBvcmF0aW9u"
 set_global_assignment -entity "altera_avalon_dc_fifo" -library "fft_fifo" -name IP_COMPONENT_VERSION "MTguMQ=="
 set_global_assignment -entity "altera_avalon_dc_fifo" -library "fft_fifo" -name IP_COMPONENT_PARAMETER "U1lNQk9MU19QRVJfQkVBVA==::MQ==::U3ltYm9scyBwZXIgYmVhdA=="
-set_global_assignment -entity "altera_avalon_dc_fifo" -library "fft_fifo" -name IP_COMPONENT_PARAMETER "QklUU19QRVJfU1lNQk9M::MTQ=::Qml0cyBwZXIgc3ltYm9s"
+set_global_assignment -entity "altera_avalon_dc_fifo" -library "fft_fifo" -name IP_COMPONENT_PARAMETER "QklUU19QRVJfU1lNQk9M::MTU=::Qml0cyBwZXIgc3ltYm9s"
 set_global_assignment -entity "altera_avalon_dc_fifo" -library "fft_fifo" -name IP_COMPONENT_PARAMETER "RklGT19ERVBUSA==::MTAyNA==::RklGTyBkZXB0aA=="
 set_global_assignment -entity "altera_avalon_dc_fifo" -library "fft_fifo" -name IP_COMPONENT_PARAMETER "Q0hBTk5FTF9XSURUSA==::MA==::Q2hhbm5lbCB3aWR0aA=="
 set_global_assignment -entity "altera_avalon_dc_fifo" -library "fft_fifo" -name IP_COMPONENT_PARAMETER "RVJST1JfV0lEVEg=::MA==::RXJyb3Igd2lkdGg="

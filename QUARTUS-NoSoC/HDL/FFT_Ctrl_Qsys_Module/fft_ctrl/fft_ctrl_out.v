@@ -87,7 +87,7 @@ module fft_ctrl_out
 				begin
 				
 					addr <= {ADDR_WIDTH{1'b0}};
-					dataout <= {{(32-DATAIN_WIDTH){1'b0}},{datareg_re},{(32-DATAIN_WIDTH){{1'b0}}},{datareg_im}};
+					dataout <= {{(32-DATAIN_WIDTH){datareg_re[DATAIN_WIDTH-1]}},{datareg_re},{(32-DATAIN_WIDTH){datareg_im[DATAIN_WIDTH-1]}},{datareg_im}};
 					wren <= 1'b1;
 					
 					if (sop && valid) // always come back to S1 if (sop && valid)
@@ -100,7 +100,7 @@ module fft_ctrl_out
 				S2 : // increment and write other registers
 				begin
 				
-					dataout <= {{(32-DATAIN_WIDTH){1'b0}},{datareg_re},{(32-DATAIN_WIDTH){{1'b0}}},{datareg_im}};
+					dataout <= {{(32-DATAIN_WIDTH){datareg_re[DATAIN_WIDTH-1]}},{datareg_re},{(32-DATAIN_WIDTH){datareg_im[DATAIN_WIDTH-1]}},{datareg_im}};
 					if (valid)
 					begin
 						addr <= addr + 1'b1;
@@ -117,7 +117,7 @@ module fft_ctrl_out
 				S3 : // send the last data before returning to S0
 				begin
 					
-					dataout <= {{(32-DATAIN_WIDTH){1'b0}},{datareg_re},{(32-DATAIN_WIDTH){{1'b0}}},{datareg_im}};
+					dataout <= {{(32-DATAIN_WIDTH){datareg_re[DATAIN_WIDTH-1]}},{datareg_re},{(32-DATAIN_WIDTH){datareg_im[DATAIN_WIDTH-1]}},{datareg_im}};
 					addr <= addr + 1'b1;
 					wren <= 1'b1;
 					
