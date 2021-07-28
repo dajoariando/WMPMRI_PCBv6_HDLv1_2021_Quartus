@@ -12,7 +12,7 @@
 *_inst.vhd
 *_generation_script*
 *.done
-*.txt
+#*.txt
 *.qarlog
 *.rpt
 *.summary
